@@ -1,5 +1,5 @@
 'use client'
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect, useRef } from 'react'
 import styles from './page.module.scss'
 import { Section } from '@/components/Section/Section'
 import { Button } from '@/components/Button/Button'
@@ -40,13 +40,11 @@ const Home: NextPage<IHomeProps> = () => {
       <div className={styles.home__gradient}>
         <Section
           title="It's in the details"
-          text="As you enter the doors of Grandma Jazz, you are instantly kissed with jazz music, Havana hats and a respect for the easy vibes."
+          text="As you enter the doors of Grandma Jazz, you are instantly kissed with jazz music, Havana hats and a respect for the easy vibes. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           image={introImage}
           imageDescription="Man with a hat"
           name="intro"
-        >
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-        </Section>
+        />
 
         <div className={styles.horizontalLine} />
 

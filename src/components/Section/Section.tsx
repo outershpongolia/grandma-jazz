@@ -1,10 +1,9 @@
-import React, { PropsWithChildren, useCallback, useEffect, useMemo, useRef, useState } from "react"
+import React, { PropsWithChildren, useCallback, useEffect, useRef } from "react"
 import styles from './Section.module.scss'
 import clsx from "clsx"
 import Image, { StaticImageData } from 'next/image'
 import { Button } from "../Button/Button"
-import { NormalText, SubtitleText } from "@/ui/Text/Text"
-import anime from 'animejs'
+import anime from "animejs"
 
 interface ISectionProps extends PropsWithChildren {
     title: string
@@ -16,79 +15,105 @@ interface ISectionProps extends PropsWithChildren {
     onClick?: () => void
 }
 
-export const Section: React.FC<ISectionProps> = ({ title, text, image, imageDescription, name, hasButton, onClick, children }) => {
-    const sectionRef = useRef(null)
-    const containerRef = useRef(null)
-    const wrapperRef = useRef(null)
+export const Section: React.FC<ISectionProps> = ({
+    title,
+    text,
+    image,
+    imageDescription,
+    name,
+    hasButton,
+    onClick
+}) => {
+    const sectionRef = useRef<HTMLDivElement>(null)
+    const titleRef = useRef<HTMLDivElement>(null)
+    const textRef = useRef<HTMLDivElement>(null)
+    const imageRef = useRef<HTMLDivElement>(null)
+    const buttonRef = useRef<HTMLDivElement>(null)
+    const shadowRef = useRef<HTMLDivElement>(null)
 
-    const animateContainer = () => {
-        anime({
-            targets: containerRef.current,
-            translateX: name === 'flowers' ? [-100, 0] : [100, 0],
-            opacity: [0, 1],
-            easing: 'easeOutQuad',
-            duration: 700,
-            delay: 300,
-        });
-    };
-    
-    const animateWrapper = () => {
-        anime({
-            targets: wrapperRef.current,
-            translateX: [-100, 0],
-            opacity: [0, 1],
-            easing: 'easeOutQuad',
-            duration: 700,
-            delay: 300,
-        });
-    }
+    const handleAnimation = useCallback(() => {
+        if (!window) return
+
+        const sectionElement = sectionRef.current
+
+        if (sectionElement) {
+            const titleElement = titleRef.current
+            const textElement = textRef.current
+            const imageElement = imageRef.current
+            const buttonElement = buttonRef.current
+            const shadowElement = shadowRef.current
+
+            if (titleElement && textElement && imageElement) {
+                anime({
+                    targets: titleElement,
+                    translateX: name === 'flowers' ? [50, 0] : [-50, 0], // slide in from right : slide in from left
+                    opacity: [0, 1],
+                    easing: 'easeOutQuad',
+                    duration: 800,
+                    delay: 0
+                }),
+                anime({
+                    targets: textElement,
+                    translateX: name === 'flowers' ? [50, 0] : [-50, 0],
+                    opacity: [0, 1],
+                    easing: 'easeOutQuad',
+                    duration: 800,
+                    delay: 300,
+                }),
+                anime({
+                    targets: imageElement,
+                    translateX: name === 'flowers' ? [-50, 0] : [50, 0],
+                    opacity: [0, 1],
+                    easing: 'easeOutQuad',
+                    duration: 800,
+                    delay: 0
+                })
+            }
+
+            if (buttonElement) {
+                anime({
+                    targets: buttonElement,
+                    translateX: name === 'vibe' ? [-50, 0] : [50, 0],
+                    opacity: [0, 1],
+                    easing: 'easeOutQuad',
+                    duration: 800,
+                    delay: 600
+                })
+            }
+
+            if (shadowElement) {
+                anime({
+                    targets: shadowElement,
+                    translateX: name === 'flowers' ? [-50, 0] : [50, 0],
+                    opacity: [0, 1],
+                    easing: 'easeOutQuad',
+                    duration: 800,
+                    delay: 600
+                })
+            }
+        }
+    }, [])
 
     useEffect(() => {
-        const options = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.3,
-        }
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    const target = entry.target;
-                    if (target === containerRef.current) {
-                        animateContainer();
-                    } else if (target === wrapperRef.current) {
-                        animateWrapper();
-                    }
+                    handleAnimation()
+                    observer.unobserve(entry.target)
                 }
             })
-        }, options)
+        }, {threshold: 0.2})
 
         if (sectionRef.current) {
             observer.observe(sectionRef.current)
-        }
-
-        if (containerRef.current) {
-            observer.observe(containerRef.current);
-        }
-        
-        if (wrapperRef.current) {
-            observer.observe(wrapperRef.current);
         }
 
         return () => {
             if (sectionRef.current) {
                 observer.unobserve(sectionRef.current)
             }
-
-            if (containerRef.current) {
-                observer.unobserve(containerRef.current);
-            }
-
-            if (wrapperRef.current) {
-                observer.unobserve(wrapperRef.current);
-            }
         }
-    }, [containerRef, wrapperRef, sectionRef])
+    }, [])
 
     const handleOnClick = useCallback(() => {
         if (!onClick) return null
@@ -107,58 +132,53 @@ export const Section: React.FC<ISectionProps> = ({ title, text, image, imageDesc
                 className={clsx(styles.section__container, {
                     [styles.section__container_right]: name === 'intro' || name === 'vibe',
                     [styles.section__container_left]: name === 'flowers',
-                    // [styles.section__container_slideLeft]: isVisible && (name === 'intro' || name === 'vibe'),
-                    // [styles.section__container_slideRight]: isVisible && name === 'flowers',
                 })}
-                ref={containerRef}
             >
-                <SubtitleText
-                    className={name === 'intro' || name === 'vibe' ? styles.section__title_right : undefined}
+                <div
+                    className={clsx(styles.section__title, {
+                        [styles.section__title_right]: name === 'intro' || name === 'vibe'
+                    })}
+                    ref={titleRef}
                 >
                     {title}
-                </SubtitleText>
+                </div>
 
-                <NormalText
+                <div
                     className={clsx(styles.section__text, {
                         [styles.section__text_right]: name === 'intro' || name === 'vibe'
                     })}
+                    ref={textRef}
                 >
                     {text}
-                </NormalText>
+                </div>
 
-                {children &&
-                    <NormalText
-                        className={clsx(styles.section__text, {
-                            [styles.section__text_right]: name === 'intro' || name === 'vibe'
-                        })}
-                    >
-                        {children}
-                    </NormalText>
-                }
-
-                {hasButton && 
-                    <Button
-                        className={styles.section__button}
-                        label='read more'
-                        onClick={handleOnClick}
-                    />
+                {hasButton &&
+                    <div ref={buttonRef}>
+                        <Button
+                            className={styles.section__button}
+                            label='read more'
+                            onClick={handleOnClick}
+                        />
+                    </div>
                 }
             </div>
 
             <div
                 className={clsx(styles.section__wrapper, {
                     [styles.section__wrapper_right]: name === 'intro' || name === 'vibe',
-                    [styles.section__wrapper_left]: name === 'flowers',
-                    // [styles.section__container_slideRight]: isVisible && (name === 'intro' || name === 'vibe'),
-                    // [styles.section__container_slideLeft]: isVisible && name === 'flowers',
+                    [styles.section__wrapper_left]: name === 'flowers'
                 })}
-                ref={wrapperRef}
+                ref={imageRef}
             >
                 <Image
                     className={clsx(styles.section__image, styles[`section__image_${name}`])}
                     src={image}
                     alt={imageDescription}
                 />
+
+                <div ref={shadowRef} className={clsx(styles.section__imageShadow, {
+                    [styles.section__imageShadow_right]: name === 'flowers'
+                })}></div>
             </div>
         </div>
     )
