@@ -2,7 +2,7 @@
     cursor: pointer;
     border: 2px solid #fff;
     padding: 12px 20px;
-    background-color: #151515;
+    background-color: #030303;
     font-size: 12px;
     line-height: 16px;
     font-weight: 600;
@@ -14,7 +14,7 @@
 
     &:hover {
         background-color: #fff;
-        color: #151515;
+        color: #030303;
     }
 
     &:disabled {
@@ -24,11 +24,11 @@
 
     &_white {
         background-color: #fff;
-        border-color: #151515;
-        color: #151515;
+        border-color: #030303;
+        color: #030303;
 
         &:hover {
-            background-color: #151515;
+            background-color: #030303;
             color: #fff;
         }
     }
