@@ -1,0 +1,43 @@
+.button {
+    cursor: pointer;
+    border: 2px solid #fff;
+    padding: 12px 20px;
+    background-color: #151515;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    width: fit-content;
+    border-radius: 6px;
+    transition: .3s ease-in;
+
+    &:hover {
+        background-color: #fff;
+        color: #151515;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    &_white {
+        background-color: #fff;
+        border-color: #151515;
+        color: #151515;
+
+        &:hover {
+            background-color: #151515;
+            color: #fff;
+        }
+    }
+
+    &_icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+    }
+}

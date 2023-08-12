@@ -1,0 +1,38 @@
+.flowersSection {
+    padding: 56px 0;
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 24px;
+
+    @media screen and (max-width: 1008px) {
+        display: none;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+    }
+
+    &__image-wrapper {
+        position: relative;
+        width: 33%;
+        overflow: hidden;
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+        min-height: 100%;
+    }
+
+    &__textWrapper {
+        width: 69%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 16px;
+    }
+}

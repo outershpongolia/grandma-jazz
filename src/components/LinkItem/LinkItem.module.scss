@@ -1,0 +1,11 @@
+.linkItem {
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+
+    &_active {
+        color: #ffffff;
+        font-weight: 600;
+    }
+}
