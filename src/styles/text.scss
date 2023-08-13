@@ -3,6 +3,10 @@
     font-family: var(--font-montserrat);
     position: relative;
 
+    &_right {
+        text-align: end;
+    }
+
     &__title {
         color: #fff;
         text-shadow: 2px 4px 4px rgba(44, 44, 44, 0.6);
@@ -53,6 +57,12 @@
     &__normal {
         font-size: 16px;
         line-height: 22px;
+
+        &_white {
+            line-height: 26px;
+            color: #030303;
+            text-align: center;
+        }
 
         @media screen and (max-width: 1008px) {
             text-align: center !important;

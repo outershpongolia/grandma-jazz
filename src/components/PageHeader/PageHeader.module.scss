@@ -40,24 +40,13 @@
             width: auto;
         }
     }
-    
-    &__title {
-        color: #fff;
-        text-shadow: 2px 4px 4px rgba(44, 44, 44, 0.6);
-        font-size: 88px;
-        line-height: 112px;
-        font-weight: 700;
-        font-family: var(--font-playfair);
-    }
 
     &__text {
         z-index: 11;
-        color: #E3F4F4;
         opacity: 0;
     }
 
     &__description {
-        font-size: 16px;
         font-weight: 600;
         text-transform: uppercase;
         background-color: #030303;

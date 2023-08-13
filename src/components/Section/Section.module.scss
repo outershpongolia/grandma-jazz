@@ -49,32 +49,15 @@
     }
 
     &__title {
-        font-size: 36px;
-        line-height: 44px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        color: #fff;
-        font-family: var(--font-playfair);
         opacity: 0;
-
-        &_right {
-            text-align: end;
-        }
     }
     
     &__text {
         max-width: 70%;
-        font-size: 16px;
-        line-height: 22px;
         opacity: 0;
 
         @media screen and (max-width: 640px) {
             max-width: none;
-        }
-
-        &_right {
-            text-align: end;
         }
     }
 

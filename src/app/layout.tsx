@@ -1,5 +1,7 @@
 import { Header } from '@/components/Header/Header'
 import './globals.scss'
+import '../styles/text.scss'
+import '../styles/container.scss'
 import type { Metadata } from 'next'
 import { Footer } from '@/components/Footer/Footer'
 import { montserratFont, playfairDisplay } from './fonts'

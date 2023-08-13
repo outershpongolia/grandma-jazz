@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './FlowersSection.module.scss'
-import { NormalText, SubtitleText } from '@/ui/Text/Text'
 import Image from 'next/image'
 
 import grandmaImage from '../../../public/images/grandma1.jpeg'
@@ -23,15 +22,15 @@ export const FlowersSection: React.FC<IFlowersSectionProps> = () => {
         </div>
 
         <div className={styles.flowersSection__textWrapper}>
-          <SubtitleText>Premium quality flowers.</SubtitleText>
+          <div className='text__subtitle'>Premium quality flowers.</div>
 
-          <NormalText>
+          <div className='text__normal'>
             Come and experience the finest quality organic cannabis on the island, always sourced from local farmers in Thailand.
-          </NormalText>
+          </div>
 
-          <NormalText>
+          <div className='text__normal'>
             Elevate your cannabis experience with each pristine bud, handpicked and delicately cultivated to deliver the utmost quality and flavor.
-          </NormalText>
+          </div>
         </div>
       </div>
 

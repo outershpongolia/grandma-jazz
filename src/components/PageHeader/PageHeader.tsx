@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useRef } from "react"
 import styles from "./PageHeader.module.scss"
 import Image, { StaticImageData } from "next/image"
 import clsx from "clsx"
-import { TitleText } from "@/ui/Text/Text"
 import anime from "animejs"
 
 interface IPageHeaderProps {
@@ -79,11 +78,11 @@ export const PageHeader: React.FC<IPageHeaderProps> = ({ image, imageDescription
 
             <div className={styles.pageHeader__shadow}></div>
 
-            <div className={clsx(styles.pageHeader__title, styles.pageHeader__text)} ref={titleRef}>{title}</div>
+            <div className={clsx(styles.pageHeader__text, 'text__title')} ref={titleRef}>{title}</div>
 
             {text &&
                 <div
-                    className={clsx(styles.pageHeader__description, styles.pageHeader__text)}
+                    className={clsx(styles.pageHeader__description, styles.pageHeader__text, 'text__normal')}
                     ref={textRef}
                 >
                     {text}

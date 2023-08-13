@@ -135,8 +135,8 @@ export const Section: React.FC<ISectionProps> = ({
                 })}
             >
                 <div
-                    className={clsx(styles.section__title, {
-                        [styles.section__title_right]: name === 'intro' || name === 'vibe'
+                    className={clsx(styles.section__title, 'text__subtitle', {
+                        'text_right': name === 'intro' || name === 'vibe'
                     })}
                     ref={titleRef}
                 >
@@ -144,8 +144,8 @@ export const Section: React.FC<ISectionProps> = ({
                 </div>
 
                 <div
-                    className={clsx(styles.section__text, {
-                        [styles.section__text_right]: name === 'intro' || name === 'vibe'
+                    className={clsx(styles.section__text, 'text__normal', {
+                        'text_right': name === 'intro' || name === 'vibe'
                     })}
                     ref={textRef}
                 >

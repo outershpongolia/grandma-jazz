@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './MobileFlowersSection.module.scss'
 import sectionStyles from '../FlowersSection.module.scss'
-import { NormalText, SubtitleText } from '@/ui/Text/Text'
 import clsx from 'clsx'
 import { Carousel } from '@/components/Carousel/Carousel'
 
@@ -18,15 +17,15 @@ export const MobileFlowersSection: React.FC<IMobileFlowersSectionProps> = () => 
     return (
         <div className={styles.mobileFlowersSection}>
             <div className={clsx(styles.mobileFlowersSection__textWrapper, sectionStyles.flowersSection__textWrapper)}>
-                <SubtitleText>Premium quality flowers.</SubtitleText>
+                <div className='text__subtitle'>Premium quality flowers.</div>
 
-                <NormalText className={styles.mobileFlowersSection__text}>
+                <div className={clsx(styles.mobileFlowersSection__text, 'text__normal')}>
                     Come and experience the finest quality organic cannabis on the island, always sourced from local farmers in Thailand.
-                </NormalText>
+                </div>
 
-                <NormalText className={styles.mobileFlowersSection__text}>
+                <div className={clsx(styles.mobileFlowersSection__text, 'text__normal')}>
                     Elevate your cannabis experience with each pristine bud, handpicked and delicately cultivated to deliver the utmost quality and flavor.
-                </NormalText>
+                </div>
             </div>
 
             <Carousel images={images} />

@@ -8,8 +8,6 @@ import { ERoute } from '@/constants'
 import { GoogleMapSection } from '@/components/GoogleMapSection/GoogleMapSection'
 import { NextPage } from 'next'
 import { PageHeader } from '@/components/PageHeader/PageHeader'
-import { WhiteSection } from '@/components/WhiteSection/WhiteSection'
-import { NormalText } from '@/ui/Text/Text'
 import Image from 'next/image'
 
 // Images
@@ -18,6 +16,7 @@ import introImage from '../../public/images/norm.jpeg'
 import flowersImage from '../../public/images/flowers.jpg'
 import vibeImage from '../../public/images/vibe.jpeg'
 import refreshmentsLogo from '../../public/images/logo-1.jpeg'
+import clsx from 'clsx'
 
 interface IHomeProps {}
 
@@ -71,32 +70,34 @@ const Home: NextPage<IHomeProps> = () => {
         />
       </div>
 
-      <WhiteSection>
-        <div className={styles['home__container-symbol']}>
-          <Image
-            className={styles['home__container-image']}
-            src={refreshmentsLogo}
-            alt='Two people sitting in a cafe, drinking tea, smoking and talking logo'
+      <div className='white-section'>
+        <div className='white-section__container'>
+          <div className={styles['home__container-symbol']}>
+            <Image
+              className={styles['home__container-image']}
+              src={refreshmentsLogo}
+              alt='Two people sitting in a cafe, drinking tea, smoking and talking logo'
+            />
+          </div>
+
+          <div className={clsx(styles.home__text, 'text__normal text__normal_white')}>
+            With a small menu of hand-crafted / local refreshments, at Grandma Jazz it's all about the experience.
+            Savor the artistry of our beverages and delectable sweets, each lovingly made to create an unforgettable taste sensation,
+            making every visit to Grandma Jazz a cherished memory.
+          </div>
+
+          <div className={clsx(styles.home__text, 'text__normal text__normal_white')}>
+            Relax and delight in Grandma Jazz's enchanting menu, designed to soothe your soul and uplift your spirits.
+          </div>
+
+          <Button
+            className={styles.home__button}
+            label='See our menu here'
+            onClick={handleNavigateToPage(ERoute.REFRESHMENTS)}
+            version='white'
           />
         </div>
-
-        <NormalText className={styles.home__text}>
-          With a small menu of hand-crafted / local refreshments, at Grandma Jazz it's all about the experience.
-          Savor the artistry of our beverages and delectable sweets, each lovingly made to create an unforgettable taste sensation,
-          making every visit to Grandma Jazz a cherished memory.
-        </NormalText>
-
-        <NormalText className={styles.home__text}>
-          Relax and delight in Grandma Jazz's enchanting menu, designed to soothe your soul and uplift your spirits.
-        </NormalText>
-
-        <Button
-          className={styles.home__button}
-          label='See our menu here'
-          onClick={handleNavigateToPage(ERoute.REFRESHMENTS)}
-          version='white'
-        />
-      </WhiteSection>
+      </div>
     
       <GoogleMapSection latitude={7.943094394919294} longitude={98.27816004327201} />
     </div>

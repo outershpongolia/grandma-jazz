@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react"
 import styles from './flowers.module.scss'
 import { PageHeader } from "@/components/PageHeader/PageHeader"
 import pageHeaderImage from '../../../public/images/flower.jpg'
-import { WhiteSection } from "@/components/WhiteSection/WhiteSection"
 import { LeafSvg, LeafSvgDense, LeafSvgWide } from "../../../public/svgs/LeafSvg"
 import { strainsList } from "@/constants"
 import { StrainItem } from "@/components/StrainItem/StrainItem"
@@ -47,37 +46,39 @@ const Flowers: React.FC<IFlowersProps> = () => {
         }
       </div>
 
-      <WhiteSection>
-        <div className={styles['flowers__whiteSection-wrapper']}>
-          <div className={styles['flowers__whiteSection-svg']}>
-            <LeafSvg />
+      <div className='white-section'>
+        <div className='white-section__container'>
+          <div className={styles['flowers__whiteSection-wrapper']}>
+            <div className={styles['flowers__whiteSection-svg']}>
+              <LeafSvg />
+            </div>
+
+            <div className={styles['flowers__whiteSection-text']}>
+              From outdoor, greenhouse to indoor exotic-grade chronic, Sativa, Indica, Hybrids... we got you.
+            </div>
           </div>
 
-          <div className={styles['flowers__whiteSection-text']}>
-            From outdoor, greenhouse to indoor exotic-grade chronic, Sativa, Indica, Hybrids... we got you.
+          <div className={styles['flowers__whiteSection-wrapper']}>
+            <div className={styles['flowers__whiteSection-text']}>
+              Premium flowers sell fast, that's why we are frequently updating our cannabis stock, discovering new strains regularly.
+            </div>
+
+            <div className={styles['flowers__whiteSection-svg']}>
+              <LeafSvgWide />
+            </div>
+          </div>
+
+          <div className={styles['flowers__whiteSection-wrapper']}>
+            <div className={styles['flowers__whiteSection-svg']}>
+              <LeafSvgDense />
+            </div>
+
+            <div className={styles['flowers__whiteSection-text']}>
+              Grown 5 minutes away. That's right, we're in heaven, my dears. Take a look below.
+            </div>
           </div>
         </div>
-
-        <div className={styles['flowers__whiteSection-wrapper']}>
-          <div className={styles['flowers__whiteSection-text']}>
-            Premium flowers sell fast, that's why we are frequently updating our cannabis stock, discovering new strains regularly.
-          </div>
-
-          <div className={styles['flowers__whiteSection-svg']}>
-            <LeafSvgWide />
-          </div>
-        </div>
-
-        <div className={styles['flowers__whiteSection-wrapper']}>
-          <div className={styles['flowers__whiteSection-svg']}>
-            <LeafSvgDense />
-          </div>
-
-          <div className={styles['flowers__whiteSection-text']}>
-            Grown 5 minutes away. That's right, we're in heaven, my dears. Take a look below.
-          </div>
-        </div>
-      </WhiteSection>
+      </div>
 
       <div className={styles.flowers__listSection}>
         <div className={styles['flowers__listSection-list']}>

@@ -12,9 +12,6 @@
     }
 
     &__text {
-        line-height: 26px;
-        color: #030303;
-        text-align: center;
         max-width: 80%;
 
         @media screen and (max-width: 640px) {
