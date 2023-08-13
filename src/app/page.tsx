@@ -42,14 +42,12 @@ const Home: NextPage<IHomeProps> = () => {
       const secondTextElement = secondTextRef.current
       const buttonElement = buttonRef.current
 
-      if (logoElement ) {
-        console.log({logoElement})
+      if (logoElement && textElement && secondTextElement && buttonElement) {
         anime({
           targets: logoElement,
           opacity: 1,
           easing: 'easeOutQuad',
-          duration: 1000,
-          delay: 100
+          duration: 1000
         }),
         anime({
           targets: textElement,

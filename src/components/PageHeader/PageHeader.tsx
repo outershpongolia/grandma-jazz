@@ -32,7 +32,7 @@ export const PageHeader: React.FC<IPageHeaderProps> = ({ image, imageDescription
                     opacity: 1,
                     easing: 'easeOutQuad',
                     duration: 900,
-                    delay: 0,
+                    delay: 100,
                 })
             }
     

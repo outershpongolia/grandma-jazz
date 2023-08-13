@@ -1,19 +1,28 @@
 "use client"
-import React, { useEffect, useState } from "react"
+import React, { useCallback, useEffect, useRef, useState } from "react"
 import styles from './flowers.module.scss'
 import { PageHeader } from "@/components/PageHeader/PageHeader"
 import pageHeaderImage from '../../../public/images/flower.jpg'
-import { LeafSvg, LeafSvgDense, LeafSvgWide } from "../../../public/svgs/LeafSvg"
+import { LeafSvg } from "../../../public/svgs/LeafSvg"
 import { strainsList } from "@/constants"
 import { StrainItem } from "@/components/StrainItem/StrainItem"
 import { FlowersSection } from "@/components/FlowersSection/FlowersSection"
 import { MobileFlowersSection } from "@/components/FlowersSection/MobileFlowersSection/MobileFlowersSection"
 import { uniqueId } from "lodash"
+import anime from "animejs"
+import { fireAnimation } from "@/utils"
+import clsx from "clsx"
 
 interface IFlowersProps {}
 
 const Flowers: React.FC<IFlowersProps> = () => {
   const [ isSmallScreen, setIsSmallScreen ] = useState(false)
+
+  const descriptionRef = useRef<HTMLDivElement>(null)
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const logoRef = useRef<HTMLDivElement>(null)
+  const textRef = useRef<HTMLDivElement>(null)
+  const secondTextRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (window) {
@@ -22,6 +31,71 @@ const Flowers: React.FC<IFlowersProps> = () => {
       setIsSmallScreen(smallScreen.matches)
     }
   }, [setIsSmallScreen])
+
+  const handleSlideAnimation = useCallback(() => {
+    if (!window) return
+
+    const descriptionElement = descriptionRef.current
+
+    if (descriptionElement) {
+      anime({
+        targets: descriptionElement,
+        translateX: [100, 0],
+        opacity: [0, 1],
+        easing: 'easeOutQuad',
+        duration: 800,
+        delay: 0
+      })
+    }
+  }, [])
+
+  const handleFadeInAnimation = useCallback(() => {
+    if (!window) return
+
+    const sectionElement = sectionRef.current
+
+    if (sectionElement) {
+      const logoElement = logoRef.current
+      const textElement = textRef.current
+      const secondTextElement = secondTextRef.current
+
+      if (logoElement && textElement && secondTextElement) {
+        anime({
+          targets: logoElement,
+          opacity: 1,
+          easing: 'easeOutQuad',
+          duration: 1000,
+          delay: 0
+        }),
+        anime({
+          targets: textElement,
+          opacity: 1,
+          easing: 'easeOutQuad',
+          duration: 1000,
+          delay: 300,
+        }),
+        anime({
+          targets: secondTextElement,
+          opacity: 1,
+          easing: 'easeOutQuad',
+          duration: 1000,
+          delay: 600
+        })
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    if (descriptionRef.current) {
+      fireAnimation(descriptionRef.current, handleSlideAnimation)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (sectionRef.current) {
+      fireAnimation(sectionRef.current, handleFadeInAnimation)
+    }
+  })
 
   return (
     <div className={styles.flowers}>
@@ -32,7 +106,7 @@ const Flowers: React.FC<IFlowersProps> = () => {
       />
 
       <div className={styles.flowers__main}>
-        <div className={styles['flowers__description-wrapper']}>
+        <div className={styles.flowers__descriptionWrapper} ref={descriptionRef}>
           <div className={styles.flowers__description}>
             We source only the finest quality flowers from farmers who pride themselves on their plants, not the size of the farms.
           </div>
@@ -47,35 +121,17 @@ const Flowers: React.FC<IFlowersProps> = () => {
       </div>
 
       <div className='white-section'>
-        <div className='white-section__container'>
-          <div className={styles['flowers__whiteSection-wrapper']}>
-            <div className={styles['flowers__whiteSection-svg']}>
-              <LeafSvg />
-            </div>
-
-            <div className={styles['flowers__whiteSection-text']}>
-              From outdoor, greenhouse to indoor exotic-grade chronic, Sativa, Indica, Hybrids... we got you.
-            </div>
+        <div className={clsx(styles.flowers__whiteSection, 'white-section__container')} ref={sectionRef}>
+          <div className={styles.flowers__logo} ref={logoRef}>
+            <LeafSvg />
           </div>
 
-          <div className={styles['flowers__whiteSection-wrapper']}>
-            <div className={styles['flowers__whiteSection-text']}>
-              Premium flowers sell fast, that's why we are frequently updating our cannabis stock, discovering new strains regularly.
-            </div>
-
-            <div className={styles['flowers__whiteSection-svg']}>
-              <LeafSvgWide />
-            </div>
+          <div className={clsx(styles.flowers__text, 'text__normal text__normal_white')} ref={textRef}>
+            From outdoor, greenhouse to indoor exotic-grade chronic, Sativa, Indica, Hybrids... we got you. Premium flowers sell fast, that's why we are frequently updating our cannabis stock, discovering new strains regularly.
           </div>
 
-          <div className={styles['flowers__whiteSection-wrapper']}>
-            <div className={styles['flowers__whiteSection-svg']}>
-              <LeafSvgDense />
-            </div>
-
-            <div className={styles['flowers__whiteSection-text']}>
-              Grown 5 minutes away. That's right, we're in heaven, my dears. Take a look below.
-            </div>
+          <div className={clsx(styles.flowers__text, 'text__normal text__normal_white')} ref={secondTextRef}>
+            Grown 5 minutes away. That's right, we're in heaven, my dears. Take a look below.
           </div>
         </div>
       </div>
