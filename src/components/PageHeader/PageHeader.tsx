@@ -3,6 +3,7 @@ import styles from "./PageHeader.module.scss"
 import Image, { StaticImageData } from "next/image"
 import clsx from "clsx"
 import anime from "animejs"
+import { fireAnimation } from "@/utils"
 
 interface IPageHeaderProps {
     image: StaticImageData
@@ -48,23 +49,8 @@ export const PageHeader: React.FC<IPageHeaderProps> = ({ image, imageDescription
     }, [])
 
     useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    handleAnimation()
-                    observer.unobserve(entry.target)
-                }
-            })
-        }, {threshold: 0.2})
-
         if (headerRef.current) {
-            observer.observe(headerRef.current)
-        }
-
-        return () => {
-            if (headerRef.current) {
-                observer.unobserve(headerRef.current)
-            }
+            fireAnimation(headerRef.current, handleAnimation)
         }
     }, [])
     

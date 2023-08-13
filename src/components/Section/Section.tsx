@@ -4,6 +4,7 @@ import clsx from "clsx"
 import Image, { StaticImageData } from 'next/image'
 import { Button } from "../Button/Button"
 import anime from "animejs"
+import { fireAnimation } from "@/utils"
 
 interface ISectionProps extends PropsWithChildren {
     title: string
@@ -31,7 +32,7 @@ export const Section: React.FC<ISectionProps> = ({
     const buttonRef = useRef<HTMLDivElement>(null)
     const shadowRef = useRef<HTMLDivElement>(null)
 
-    const handleAnimation = useCallback(() => {
+    const handleSlideAnimation = useCallback(() => {
         if (!window) return
 
         const sectionElement = sectionRef.current
@@ -95,23 +96,8 @@ export const Section: React.FC<ISectionProps> = ({
     }, [])
 
     useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    handleAnimation()
-                    observer.unobserve(entry.target)
-                }
-            })
-        }, {threshold: 0.2})
-
         if (sectionRef.current) {
-            observer.observe(sectionRef.current)
-        }
-
-        return () => {
-            if (sectionRef.current) {
-                observer.unobserve(sectionRef.current)
-            }
+            fireAnimation(sectionRef.current, handleSlideAnimation)
         }
     }, [])
 

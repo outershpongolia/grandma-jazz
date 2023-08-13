@@ -1,18 +1,20 @@
 .home {
     overflow: hidden;
 
-    &__container-symbol {
+    &__logoWrapper {
         height: 80px;
         width: fit-content;
+        opacity: 0;
     }
 
-    &__container-image {
+    &__logo {
         height: 100%;
         width: auto;
     }
 
     &__text {
         max-width: 80%;
+        opacity: 0;
 
         @media screen and (max-width: 640px) {
             max-width: 100%;
