@@ -1,13 +1,14 @@
 import React, { useCallback, useEffect, useRef } from 'react'
 import styles from './FlowersSection.module.scss'
+import { fireAnimation } from '@/utils'
+import anime from 'animejs'
+import clsx from 'clsx'
 import Image from 'next/image'
 
 import grandmaImage from '../../../public/images/grandma1.jpeg'
 import grandmaImage2 from '../../../public/images/grandma2.jpeg'
 import grandmaImage3 from '../../../public/images/jump.jpeg'
 import grandmaImage4 from '../../../public/images/grandma3.png'
-import { fireAnimation } from '@/utils'
-import anime from 'animejs'
 
 interface IFlowersSectionProps {}
 
@@ -62,7 +63,7 @@ export const FlowersSection: React.FC<IFlowersSectionProps> = () => {
         }),
         anime({
           targets: image1Element,
-          translateX: [-50, 0],
+          translateX: [-50, 0], // slide in from left
           opacity: [0, 1],
           easing: 'easeOutQuad',
           duration: 800,
@@ -82,7 +83,7 @@ export const FlowersSection: React.FC<IFlowersSectionProps> = () => {
           opacity: [0, 1],
           easing: 'easeOutQuad',
           duration: 800,
-          delay: 600
+          delay: 300
         }),
         anime({
           targets: image4Element,
@@ -90,7 +91,7 @@ export const FlowersSection: React.FC<IFlowersSectionProps> = () => {
           opacity: [0, 1],
           easing: 'easeOutQuad',
           duration: 800,
-          delay: 800
+          delay: 600
         })
       }
     }
@@ -103,8 +104,8 @@ export const FlowersSection: React.FC<IFlowersSectionProps> = () => {
   }, [])
 
   return (
-    <div className={styles.flowersSection}>
-      <div className={styles.flowersSection__container} ref={sectionRef}>
+    <div className={styles.flowersSection} ref={sectionRef}>
+      <div className={styles.flowersSection__container}>
         <div className={styles['flowersSection__image-wrapper']} ref={image1Ref}>
           <Image
             className={styles.flowersSection__image}
@@ -114,13 +115,13 @@ export const FlowersSection: React.FC<IFlowersSectionProps> = () => {
         </div>
 
         <div className={styles.flowersSection__textWrapper}>
-          <div className='text__subtitle' ref={titleRef}>Premium quality flowers.</div>
+          <div className={clsx(styles.flowers__text, 'text__subtitle')} ref={titleRef}>Premium quality flowers.</div>
 
-          <div className='text__normal' ref={textRef}>
+          <div className={clsx(styles.flowers__text, 'text__normal')} ref={textRef}>
             Come and experience the finest quality organic cannabis on the island, always sourced from local farmers in Thailand.
           </div>
 
-          <div className='text__normal' ref={text2Ref}>
+          <div className={clsx(styles.flowers__text, 'text__normal')} ref={text2Ref}>
             Elevate your cannabis experience with each pristine bud, handpicked and delicately cultivated to deliver the utmost quality and flavor.
           </div>
         </div>

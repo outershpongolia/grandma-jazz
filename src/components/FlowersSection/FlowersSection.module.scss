@@ -1,5 +1,5 @@
 .flowersSection {
-    padding: 56px 0;
+    padding: 88px 0;
     display: flex;
     flex-direction: column;
     max-width: 1000px;
@@ -20,6 +20,7 @@
         position: relative;
         width: 33%;
         overflow: hidden;
+        opacity: 0;
     }
 
     &__image {
@@ -34,5 +35,9 @@
         flex-direction: column;
         justify-content: center;
         gap: 16px;
+    }
+
+    &__text {
+        opacity: 0;
     }
 }

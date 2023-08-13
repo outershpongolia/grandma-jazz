@@ -137,7 +137,7 @@ const Flowers: React.FC<IFlowersProps> = () => {
       </div>
 
       <div className={styles.flowers__listSection}>
-        <div className={styles['flowers__listSection-list']}>
+        <div className={styles.flowers__list}>
          {strainsList.map(strain => {
           return (
             <StrainItem
