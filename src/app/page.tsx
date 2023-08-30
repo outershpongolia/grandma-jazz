@@ -137,13 +137,13 @@ const Home: NextPage<IHomeProps> = () => {
             />
           </div>
 
-          <div className={clsx(styles.home__text, 'text__normal text__normal_white')} ref={textRef}>
+          <div className={clsx(styles.home__text, 'text__normal text__normal_black')} ref={textRef}>
             With a small menu of hand-crafted / local refreshments, at Grandma Jazz it's all about the experience.
             Savor the artistry of our beverages and delectable sweets, each lovingly made to create an unforgettable taste sensation,
             making every visit to Grandma Jazz a cherished memory.
           </div>
 
-          <div className={clsx(styles.home__text, 'text__normal text__normal_white')} ref={secondTextRef}>
+          <div className={clsx(styles.home__text, 'text__normal text__normal_black')} ref={secondTextRef}>
             Relax and delight in Grandma Jazz's enchanting menu, designed to soothe your soul and uplift your spirits.
           </div>
 
