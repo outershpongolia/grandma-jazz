@@ -1,10 +1,13 @@
 .popup {
-    min-height: 74%;
-    min-width: 50%;
+    height: 96%;
+    width: 96%;
+    max-width: 764px;
+    max-height: 526px;
     background-color: #ffff;
     border-radius: 24px;
     display: flex;
     position: relative;
+    overflow: hidden;
     
     &__wrapper {
         position: fixed;
@@ -37,8 +40,21 @@
 
     &__text {
         color: #030303;
-        text-align: start;
+        text-align: start !important;
         margin-top: 24px;
+
+        @media screen and (max-width: 640px) {
+            font-size: 14px !important;
+            line-height: 20px;
+            margin-top: 16px;
+        }
+
+        &_name {
+            @media screen and (max-width: 640px) {
+                font-size: 26px !important;
+                line-height: 32px !important;
+            }
+        }
 
         &_type {
             text-transform: uppercase;
