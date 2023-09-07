@@ -1,4 +1,17 @@
 .vibe {
-    height: 100%;
-    padding: 32px;
+    padding: 56px 32px;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    gap: 220px;
+
+    @media screen and (max-width: 820px) {
+        gap: 140px;
+    }
+
+    @media screen and (max-width: 714px) {
+        flex-direction: column;
+    }
 }

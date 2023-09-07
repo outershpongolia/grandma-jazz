@@ -13,12 +13,7 @@
     }
 
     &__text {
-        max-width: 80%;
         opacity: 0;
-
-        @media screen and (max-width: 640px) {
-            max-width: 100%;
-        }
     }
 
     &__button {

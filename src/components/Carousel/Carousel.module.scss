@@ -1,75 +1,41 @@
 .carousel {
-    display: flex;
-    gap: 2%;
-    justify-content: space-between;
+	margin: auto;
+	overflow: hidden;
+	position: relative;
     width: 100%;
-    height: 100%;
-    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding: 48px 0;
 
-    @media screen and (max-width: 640px) {
-        gap: 0;
+    @media screen and (max-width: 680px) {
+        padding: 32px 0;
     }
 
-    &__container {
-        width: 100%;
-        max-width: 600px;
-        height: 280px;
-        overflow: hidden;
-        position: relative;
-
-        @media screen and (max-width: 640px) {
-            width: 320px;
-            height: 320px;
-        }
-
-        @media screen and (max-width: 374px) {
-            width: 280px;
-            height: 100%;
-        }
-    }
-      
-    &__slide {
-        flex: 0 0 50%;
-
-        @media screen and (max-width: 640px) {
-            flex: 0 0 100%;
-        }
-    }
-      
-    &__image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    &__button {
+    &::before,
+    &::after {
+        content: '';
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 0;
+        bottom: 0;
+        width: 16px;
         z-index: 999;
-        font-size: 24px;
-        padding: 8px;
-
-        &:hover {
-            background-color: transparent;
-        }
-
-        &:disabled {
-            & .carousel__icon {
-                fill: rgb(184, 184, 184);
-            }
-        }
-
-        &_prev {
-            left: 0;
-        }
-
-        &_next {
-            right: 0;
-        }
     }
 
-    &__icon_left {
-        transform: rotate(180deg);
+    &::before {
+        left: 0;
+        background: linear-gradient(to right, #030303d1, #0303038b, #0303033e, #03030310, #03030300);
+    }
+
+    &::after {
+        right: 0;
+        background: linear-gradient(to left, #030303d1, #0303038b, #0303033e, #03030310, #03030300);
+    }
+
+    &__track {
+        display: flex !important;
+    }
+
+    &__image {
+        height: 238px;
+        width: 258px;
+        margin-right: 32px;
     }
 }
