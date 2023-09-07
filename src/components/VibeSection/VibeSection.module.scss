@@ -1,0 +1,50 @@
+.vibeSection {
+    display: flex;
+    position: relative;
+
+    &_left {
+        padding-top: 88px;
+    }
+
+    &__videoWrapper {
+        width: 42%;
+    }
+
+    &__video {
+        width: 360px;
+        height: 440px;
+
+        @media screen and (max-width: 1008px) {
+            width: 300px;
+            height: 400px;
+        }
+    }
+
+    &__text {
+        width: 200px;
+        position: absolute;
+        top: 320px;
+        left: 280px;
+        background-color: #fff;
+        color: #030303;
+        padding: 16px;
+        font-weight: 500;
+        opacity: 0.95;
+        border-radius: 8px;
+
+        @media screen and (max-width: 1008px) {
+            left: 240px;
+            top: 280px;
+        }
+
+        &_left {
+            right: 280px;
+            left: auto;
+            top: 56px;
+
+            @media screen and (max-width: 1008px) {
+                right: 240px;
+            }
+        }
+    }
+}

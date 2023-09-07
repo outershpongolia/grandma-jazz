@@ -121,7 +121,7 @@ export const Section: React.FC<ISectionProps> = ({
                 })}
             >
                 <div
-                    className={clsx(styles.section__title, 'text__subtitle', {
+                    className={clsx(styles.section__text, 'text__subtitle', {
                         'text_right': name === 'intro' || name === 'vibe'
                     })}
                     ref={titleRef}

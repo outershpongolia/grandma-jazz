@@ -6,6 +6,8 @@ import type { Metadata } from 'next'
 import { Footer } from '@/components/Footer/Footer'
 import { montserratFont, playfairDisplay } from './fonts'
 import clsx from 'clsx'
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 export const metadata: Metadata = {
   title: 'Grandma Jazz',

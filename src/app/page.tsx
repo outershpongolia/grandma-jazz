@@ -127,34 +127,32 @@ const Home: NextPage<IHomeProps> = () => {
         />
       </div>
 
-      <div className='white-section'>
-        <div className='white-section__container' ref={sectionRef}>
-          <div className={styles.home__logoWrapper} ref={logoRef}>
-            <Image
-              className={styles.home__logo}
-              src={refreshmentsLogo}
-              alt='Two people sitting in a cafe, drinking tea, smoking and talking logo'
-            />
-          </div>
+      <div className='white-section' ref={sectionRef}>
+        <div className={styles.home__logoWrapper} ref={logoRef}>
+          <Image
+            className={styles.home__logo}
+            src={refreshmentsLogo}
+            alt='Two people sitting in a cafe, drinking tea, smoking and talking logo'
+          />
+        </div>
 
-          <div className={clsx(styles.home__text, 'text__normal text__normal_black')} ref={textRef}>
-            With a small menu of hand-crafted / local refreshments, at Grandma Jazz it's all about the experience.
-            Savor the artistry of our beverages and delectable sweets, each lovingly made to create an unforgettable taste sensation,
-            making every visit to Grandma Jazz a cherished memory.
-          </div>
+        <div className={clsx(styles.home__text, 'text__normal text__normal_black')} ref={textRef}>
+          With a small menu of hand-crafted / local refreshments, at Grandma Jazz it's all about the experience.
+          Savor the artistry of our beverages and delectable sweets, each lovingly made to create an unforgettable taste sensation,
+          making every visit to Grandma Jazz a cherished memory.
+        </div>
 
-          <div className={clsx(styles.home__text, 'text__normal text__normal_black')} ref={secondTextRef}>
-            Relax and delight in Grandma Jazz's enchanting menu, designed to soothe your soul and uplift your spirits.
-          </div>
+        <div className={clsx(styles.home__text, 'text__normal text__normal_black')} ref={secondTextRef}>
+          Relax and delight in Grandma Jazz's enchanting menu, designed to soothe your soul and uplift your spirits.
+        </div>
 
-          <div ref={buttonRef} style={{opacity: 0}}>
-            <Button
-              className={styles.home__button}
-              label='See our menu here'
-              onClick={handleNavigateToPage(ERoute.REFRESHMENTS)}
-              version='white'
-            />
-          </div>
+        <div ref={buttonRef} style={{opacity: 0}}>
+          <Button
+            className={styles.home__button}
+            label='See our menu here'
+            onClick={handleNavigateToPage(ERoute.REFRESHMENTS)}
+            version='white'
+          />
         </div>
       </div>
     

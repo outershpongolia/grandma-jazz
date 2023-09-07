@@ -120,19 +120,17 @@ const Flowers: React.FC<IFlowersProps> = () => {
         }
       </div>
 
-      <div className='white-section'>
-        <div className={clsx(styles.flowers__whiteSection, 'white-section__container')} ref={sectionRef}>
-          <div className={clsx(styles.flowers__text, styles.flowers__title, 'text__normal text__normal_black')} ref={titleRef}>
-            Why would you love it here?
-          </div>
+      <div className={clsx(styles.flowers__whiteSection, 'white-section')} ref={sectionRef}>
+        <div className={clsx(styles.flowers__text, styles.flowers__title, 'text__normal text__normal_black')} ref={titleRef}>
+          Why would you love it here?
+        </div>
 
-          <div className={clsx(styles.flowers__text, 'text__normal text__normal_black')} ref={textRef}>
-            From outdoor, greenhouse to indoor exotic-grade chronic, Sativa, Indica, Hybrids... we got you. Premium flowers sell fast, that's why we are frequently updating our cannabis stock, discovering new strains regularly.
-          </div>
+        <div className={clsx(styles.flowers__text, 'text__normal text__normal_black')} ref={textRef}>
+          From outdoor, greenhouse to indoor exotic-grade chronic, Sativa, Indica, Hybrids... we got you. Premium flowers sell fast, that's why we are frequently updating our cannabis stock, discovering new strains regularly.
+        </div>
 
-          <div className={clsx(styles.flowers__text, 'text__normal text__normal_black')} ref={secondTextRef}>
-            Grown 5 minutes away. That's right, we're in heaven, my dears. Take a look below.
-          </div>
+        <div className={clsx(styles.flowers__text, 'text__normal text__normal_black')} ref={secondTextRef}>
+          Grown 5 minutes away. That's right, we're in heaven, my dears. Take a look below.
         </div>
       </div>
 

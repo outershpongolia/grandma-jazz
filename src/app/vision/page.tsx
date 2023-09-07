@@ -6,7 +6,7 @@ interface IVisionProps {}
 const Vision: React.FC<IVisionProps> = () => {
     return (
         <div className={styles.vision}>
-            Vision
+            In construction ...
         </div>
     )
 }
