@@ -1,29 +1,49 @@
-import React from 'react'
+import React from "react"
+
 import styles from './VibeSection.module.scss'
-import clsx from 'clsx'
+import { Video } from "../Video/Video"
+import { uniqueId } from "lodash"
+import clsx from "clsx"
 
 interface IVibeSectionProps {
-    video: string
-    text: string
-    left?: boolean
+  videos: string[]
+  texts: string[]
+  reversed?: boolean
 }
 
-export const VibeSection: React.FC<IVibeSectionProps> = ({ video, text, left }) => {
-    return (
-        <div className={clsx(styles.vibeSection, {
-            [styles.vibeSection_left]: left
-        })}>
-            <div className={styles.vibeSection__videoWrapper}>
-                <video className={styles.vibeSection__video} autoPlay>
-                    <source src={video} type='video/mp4' />
-                </video>
-            </div>
-
-            <div className={clsx(styles.vibeSection__text, {
-                [styles.vibeSection__text_left]: left
-            })}>
-                {text}
-            </div>
+export const VibeSection: React.FC<IVibeSectionProps> = ({ videos, texts, reversed }) => {
+  return (
+    <div
+      className={clsx(styles.vibeSection, {
+        [styles.vibeSection_reversed]: reversed
+      })}
+    >
+      <div
+        className={clsx(styles.vibeSection__columns, {
+          [styles.vibeSection__columns_reversed]: reversed
+        })}
+      >
+        {videos && videos.map(video => {
+          return <Video key={uniqueId(video)} video={video} />
+        })}
       </div>
-    )
+
+      <div className={styles.vibeSection__columns}>
+        <div className={styles.vibeSection__textWrapper}>
+          {texts && texts.map(text => {
+            return (
+              <div
+                key={uniqueId(text)}
+                className={clsx(styles.vibeSection__text, 'text__normal', {
+                  [styles.vibeSection__text_reversed]: reversed
+                })}
+              >
+                {text}
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </div>
+  )
 }

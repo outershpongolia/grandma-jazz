@@ -1,5 +1,6 @@
 .flowers {
     overflow: hidden;
+    padding-bottom: 56px;
 
     &__main {
         padding: 0 32px;
@@ -7,6 +8,10 @@
         @media screen and (max-width: 440px) {
             padding: 0 16px;
         }
+    }
+
+    &__header {
+        box-shadow: #030303 0px -50px 36px -28px inset;
     }
 
     &__descriptionWrapper {
@@ -47,11 +52,22 @@
 
     &__whiteSection {
         max-width: 1000px;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
 
-        @media screen and (max-width: 800px) {
+        @media screen and (max-width: 640px) {
+            gap: 32px;
+        }
+    }
+
+    &__textWrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 48px;
+
+        @media screen and (max-width: 640px) {
             flex-direction: column;
             align-items: center;
         }
@@ -59,59 +75,95 @@
 
     &__text {
         opacity: 0;
-        width: 29%;
+        width: 40%;
+        text-align: start !important;
 
-        @media screen and (max-width: 1080px) {
-            font-size: 14px;
-            line-height: 24px;
-        }
-
-        @media screen and (max-width: 800px) {
+        @media screen and (max-width: 640px) {
+            text-align: center !important;
             width: 100%;
         }
     }
 
     &__title {
+        text-align: center !important;
         font-size: 40px;
         line-height: 48px;
         font-weight: 500;
-        text-align: start !important;
         font-family: var(--font-playfair);
+        width: 100%;
 
-        @media screen and (max-width: 1080px) {
+        @media screen and (max-width: 640px) {
             font-size: 32px;
             line-height: 40px;
         }
-
-        @media screen and (max-width: 800px) {
-            text-align: center !important;
-        }
     }
 
-    &__listSection {
-        padding: 88px 32px;
+    &__navButton {
+        cursor: pointer;
+        padding: 24px;
         display: flex;
-        flex-direction: column;
-        gap: 24px;
-        width: 100%;
+        align-items: center;
+        gap: 8px;
+        width: fit-content;
 
-        @media screen and (max-width: 440px) {
-            padding: 56px 16px;
+        &:hover {
+            & > .flowers__dot {
+                transform: scale(3);
+                background-color: #030303;
+
+                & > .flowers__video {
+                    opacity: 1;
+                }
+            }
+
+            & > .flowers__buttonText {
+                mix-blend-mode: difference;
+                filter: invert(1);
+                
+                & > .flowers__underline {
+                    width: 100%;
+                }
+            }
         }
     }
 
-    &__list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 32px;
-        row-gap: 32px;
-        justify-items: center;
-        width: 100%;
-        max-width: 1000px;
-        margin: 0 auto;
+    &__dot {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background-color: #030303;
+        transition: all 0.5s ease-in-out;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+    }
 
-        @media screen and (max-width: 670px) {
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        }
+    &__video {
+        opacity: 0;
+        width: 28px;
+        height: auto;
+        position: absolute;
+        bottom: 0;
+        z-index: 2;
+        border-radius: 50%;
+        transition: all 0.5s ease-in-out;
+    }
+
+    &__buttonText {
+        text-transform: uppercase;
+        font-weight: 500;
+        position: relative;
+        color: #030303;
+        z-index: 3;
+    }
+
+    &__underline {
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background-color: #030303;
+        left: 0;
+        bottom: -4px;
+        transition: all 0.5s ease-in-out;
     }
 }

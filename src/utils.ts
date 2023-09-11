@@ -1,4 +1,4 @@
-export const fireAnimation = (ref: HTMLDivElement, callback: () => void) => {
+export const triggerAnimation = (ref: HTMLDivElement | SVGSVGElement, callback: () => void) => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {

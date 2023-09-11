@@ -4,7 +4,7 @@ import clsx from "clsx"
 import Image, { StaticImageData } from 'next/image'
 import { Button } from "../Button/Button"
 import anime from "animejs"
-import { fireAnimation } from "@/utils"
+import { triggerAnimation } from "@/utils"
 
 interface ISectionProps extends PropsWithChildren {
     title: string
@@ -97,7 +97,7 @@ export const Section: React.FC<ISectionProps> = ({
 
     useEffect(() => {
         if (sectionRef.current) {
-            fireAnimation(sectionRef.current, handleSlideAnimation)
+            triggerAnimation(sectionRef.current, handleSlideAnimation)
         }
     }, [])
 
