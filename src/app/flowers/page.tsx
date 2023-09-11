@@ -3,14 +3,10 @@ import React, { useCallback, useEffect, useRef, useState } from "react"
 import styles from './flowers.module.scss'
 import { PageHeader } from "@/components/PageHeader/PageHeader"
 import pageHeaderImage from '../../../public/images/flower.jpg'
-import { LeafSvg } from "../../../public/svgs/LeafSvg"
-import { strainsList } from "@/constants"
-import { StrainItem } from "@/components/StrainItem/StrainItem"
 import { FlowersSection } from "@/components/FlowersSection/FlowersSection"
 import { MobileFlowersSection } from "@/components/FlowersSection/MobileFlowersSection/MobileFlowersSection"
-import { uniqueId } from "lodash"
 import anime from "animejs"
-import { fireAnimation } from "@/utils"
+import { triggerAnimation } from "@/utils"
 import clsx from "clsx"
 
 interface IFlowersProps {}
@@ -23,6 +19,11 @@ const Flowers: React.FC<IFlowersProps> = () => {
   const titleRef = useRef<HTMLDivElement>(null)
   const textRef = useRef<HTMLDivElement>(null)
   const secondTextRef = useRef<HTMLDivElement>(null)
+
+  const navigateToInstagram = useCallback(() => {
+    const instagramUrl = 'https://www.instagram.com/stories/highlights/17971187909126277/'
+    window.open(instagramUrl, '_blank')
+  }, [])
 
   useEffect(() => {
     if (window) {
@@ -87,19 +88,20 @@ const Flowers: React.FC<IFlowersProps> = () => {
 
   useEffect(() => {
     if (descriptionRef.current) {
-      fireAnimation(descriptionRef.current, handleSlideAnimation)
+      triggerAnimation(descriptionRef.current, handleSlideAnimation)
     }
   }, [])
 
   useEffect(() => {
     if (sectionRef.current) {
-      fireAnimation(sectionRef.current, handleFadeInAnimation)
+      triggerAnimation(sectionRef.current, handleFadeInAnimation)
     }
   })
 
   return (
     <div className={styles.flowers}>
       <PageHeader
+        className={styles.flowers__header}
         image={pageHeaderImage}
         imageDescription='Marijuana plant with beautiful green leaves'
         title='Our flowers.'
@@ -125,32 +127,28 @@ const Flowers: React.FC<IFlowersProps> = () => {
           Why would you love it here?
         </div>
 
-        <div className={clsx(styles.flowers__text, 'text__normal text__normal_black')} ref={textRef}>
-          From outdoor, greenhouse to indoor exotic-grade chronic, Sativa, Indica, Hybrids... we got you. Premium flowers sell fast, that's why we are frequently updating our cannabis stock, discovering new strains regularly.
+        <div className={styles.flowers__textWrapper}>
+          <div className={clsx(styles.flowers__text, 'text__normal text__normal_black')} ref={textRef}>
+            From outdoor, greenhouse to indoor exotic-grade chronic, Sativa, Indica, Hybrids... we got you. Premium flowers sell fast, that's why we are frequently discovering new strains regularly and updating our cannabis stock.
+          </div>
+
+          <div className={clsx(styles.flowers__text, 'text__normal text__normal_black')} ref={secondTextRef}>
+            Grown 5 minutes away. That's right, we're in heaven, my dears. Check our Instagram page to see what we offer today.
+          </div>
         </div>
 
-        <div className={clsx(styles.flowers__text, 'text__normal text__normal_black')} ref={secondTextRef}>
-          Grown 5 minutes away. That's right, we're in heaven, my dears. Take a look below.
-        </div>
-      </div>
+        <div className={styles.flowers__navButton} onClick={navigateToInstagram}>
+          <div className={styles.flowers__dot}>
+            <video className={styles.flowers__video} autoPlay loop>
+              <source src='/videos/example-video-short.mp4' type='video/mp4' />
+            </video>
+          </div>
 
-      <div className={styles.flowers__listSection}>
-        <div className={styles.flowers__list}>
-         {strainsList.map(strain => {
-          return (
-            <StrainItem
-              key={uniqueId(strain.name)}
-              title={strain.name}
-              text={strain.description}
-              image={strain.image}
-              note={strain.note}
-              type={strain.type}
-              feeling={strain.feeling}
-              flavour={strain.flavour}
-              help={strain.help}
-            />
-          )
-         })}
+          <div className={clsx(styles.flowers__buttonText, 'text__normal')}>
+            see our instagram
+
+            <div className={styles.flowers__underline} />
+          </div>
         </div>
       </div>
     </div>

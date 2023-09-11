@@ -19,14 +19,18 @@
     &__image-wrapper {
         position: relative;
         width: 33%;
-        overflow: hidden;
-        opacity: 0;
     }
 
     &__image {
         width: 100%;
         height: auto;
         min-height: 100%;
+        opacity: 0.9;
+        transition: all 0.2s ease-out;
+
+        &:hover {
+            transform: scale(1.04);
+        }
     }
 
     &__textWrapper {

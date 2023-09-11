@@ -3,16 +3,17 @@ import styles from "./PageHeader.module.scss"
 import Image, { StaticImageData } from "next/image"
 import clsx from "clsx"
 import anime from "animejs"
-import { fireAnimation } from "@/utils"
+import { triggerAnimation } from "@/utils"
 
 interface IPageHeaderProps {
     image: StaticImageData
     imageDescription: string
     title: string
     text?: string
+    className?: string
 }
 
-export const PageHeader: React.FC<IPageHeaderProps> = ({ image, imageDescription, title, text }) => {
+export const PageHeader: React.FC<IPageHeaderProps> = ({ image, imageDescription, title, text, className }) => {
     const titleRef = useRef<HTMLDivElement>(null)
     const textRef = useRef<HTMLDivElement>(null)
     const headerRef = useRef<HTMLDivElement>(null)
@@ -50,7 +51,7 @@ export const PageHeader: React.FC<IPageHeaderProps> = ({ image, imageDescription
 
     useEffect(() => {
         if (headerRef.current) {
-            fireAnimation(headerRef.current, handleAnimation)
+            triggerAnimation(headerRef.current, handleAnimation)
         }
     }, [])
     
@@ -62,7 +63,7 @@ export const PageHeader: React.FC<IPageHeaderProps> = ({ image, imageDescription
                 alt={imageDescription}
             />
 
-            <div className={styles.pageHeader__shadow}></div>
+            <div className={clsx(styles.pageHeader__shadow, className)}></div>
 
             <div className={clsx(styles.pageHeader__text, 'text__title')} ref={titleRef}>{title}</div>
 

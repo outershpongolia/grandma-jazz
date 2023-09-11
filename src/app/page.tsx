@@ -17,7 +17,7 @@ import flowersImage from '../../public/images/flowers.jpg'
 import vibeImage from '../../public/images/vibe.jpeg'
 import refreshmentsLogo from '../../public/images/logo-1.jpeg'
 import clsx from 'clsx'
-import { fireAnimation } from '@/utils'
+import { triggerAnimation } from '@/utils'
 import anime from 'animejs'
 
 interface IHomeProps {}
@@ -76,7 +76,7 @@ const Home: NextPage<IHomeProps> = () => {
 
   useEffect(() => {
     if (sectionRef.current) {
-      fireAnimation(sectionRef.current, handleFadeInAnimation)
+      triggerAnimation(sectionRef.current, handleFadeInAnimation)
     }
   }, [])
 
