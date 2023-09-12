@@ -1,4 +1,39 @@
 .vision {
-    height: 100%;
-    padding: 32px;
+    width: 100%;
+    position: relative;
+
+    &__main {
+        position: relative;
+        padding: 56px;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 1200px;
+        display: flex;
+    }
+
+    &__imageWrapper,
+    &__textWrapper {
+        width: 50%;
+        display: flex;
+        padding: 24px;
+    }
+
+    &__imageWrapper {
+        justify-content: flex-end;
+    }
+
+    &__image {
+        width: 348px;
+        height: auto;
+    }
+
+    &__textWrapper {
+        flex-direction: column;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    &__text {
+        font-size: 24px;
+    }
 }
