@@ -6,6 +6,7 @@ import headerImage from '../../../public/images/vision-grandma.png'
 
 import { VisionSection } from "@/components/VisionSection/VisionSection"
 import clsx from "clsx"
+import { uniqueId } from "lodash"
 
 interface IVisionProps {}
 
@@ -23,7 +24,7 @@ const Vision: React.FC<IVisionProps> = () => {
 
         <div className={styles.vision__textWrapper}>
           {texts && texts.map(text => {
-            return <div className={clsx(styles.vision__text, 'text__normal')}>{text}</div>
+            return <div key={uniqueId(text)} className={clsx(styles.vision__text, 'text__normal')}>{text}</div>
           })}
         </div>
       </div>
