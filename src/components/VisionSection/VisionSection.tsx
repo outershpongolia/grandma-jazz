@@ -1,6 +1,7 @@
 import React from "react"
 import styles from './VisionSection.module.scss'
 import clsx from "clsx"
+import { uniqueId } from "lodash"
 
 interface IVisionSectionProps {
     title: string
@@ -19,7 +20,7 @@ export const VisionSection: React.FC<IVisionSectionProps> = ({ title, texts, rev
                 {title}
             </div>
             
-            {texts && texts.map(text => <div className={styles.visionSection__text}>{text}</div>)}
+            {texts && texts.map(text => <div key={uniqueId(text)} className={styles.visionSection__text}>{text}</div>)}
         </div>
     )
 }
