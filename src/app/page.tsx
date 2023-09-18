@@ -11,7 +11,7 @@ import { PageHeader } from '@/components/PageHeader/PageHeader'
 import Image from 'next/image'
 
 // Images
-import headerImage from '../../public/images/example1.jpeg'
+import headerImage from '../../public/images/grandma-jazz.png'
 import introImage from '../../public/images/norm.jpeg'
 import flowersImage from '../../public/images/flowers.jpg'
 import vibeImage from '../../public/images/vibe.jpeg'

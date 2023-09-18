@@ -1,3 +1,4 @@
+"use client"
 import React, { useCallback, useEffect, useRef } from "react"
 import styles from "./PageHeader.module.scss"
 import Image, { StaticImageData } from "next/image"
@@ -10,10 +11,11 @@ interface IPageHeaderProps {
     imageDescription: string
     title: string
     text?: string
+    pageType?: 'flowers'
     className?: string
 }
 
-export const PageHeader: React.FC<IPageHeaderProps> = ({ image, imageDescription, title, text, className }) => {
+export const PageHeader: React.FC<IPageHeaderProps> = ({ image, imageDescription, title, text, pageType, className }) => {
     const titleRef = useRef<HTMLDivElement>(null)
     const textRef = useRef<HTMLDivElement>(null)
     const headerRef = useRef<HTMLDivElement>(null)
@@ -56,7 +58,12 @@ export const PageHeader: React.FC<IPageHeaderProps> = ({ image, imageDescription
     }, [])
     
     return (
-        <div className={styles.pageHeader} ref={headerRef}>
+        <div
+            className={clsx(styles.pageHeader, {
+                [styles.pageHeader_flowers]: pageType && pageType === 'flowers'
+            })}
+            ref={headerRef}
+        >
             <Image
                 className={styles.pageHeader__image}
                 src={image}
@@ -65,7 +72,12 @@ export const PageHeader: React.FC<IPageHeaderProps> = ({ image, imageDescription
 
             <div className={clsx(styles.pageHeader__shadow, className)}></div>
 
-            <div className={clsx(styles.pageHeader__text, 'text__title')} ref={titleRef}>{title}</div>
+            <div
+                className={clsx(styles.pageHeader__text, 'text__title', styles.pageHeader__title)}
+                ref={titleRef}
+            >
+                {title}
+            </div>
 
             {text &&
                 <div

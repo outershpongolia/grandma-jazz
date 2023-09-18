@@ -38,8 +38,7 @@
     }
 
     &__wrapper {
-        padding: 72px 32px;
-        background-color: #fff;
+        padding: 24px 32px 40px 32px;
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
@@ -82,6 +81,10 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        
+        * {
+            color: #fff;
+        }
 
         @media screen and (max-width: 572px) {
             width: 100%;
@@ -91,5 +94,22 @@
     &__subtitle {
         font-size: 26px;
         font-family: var(--font-montserrat);
+    }
+
+    &__image {
+        &_coffee {
+            width: 240px;
+            height: 240px;
+        }
+
+        &_tea {
+            width: 320px;
+            height: 320px;
+        }
+
+        &_cake {
+            width: 200px;
+            height: 200px;
+        }
     }
 }

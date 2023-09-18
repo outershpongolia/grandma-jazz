@@ -105,6 +105,7 @@ const Flowers: React.FC<IFlowersProps> = () => {
         image={pageHeaderImage}
         imageDescription='Marijuana plant with beautiful green leaves'
         title='Our flowers.'
+        pageType='flowers'
       />
 
       <div className={styles.flowers__main}>

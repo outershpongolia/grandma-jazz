@@ -1,9 +1,11 @@
 import React from "react"
 import styles from './refreshments.module.scss'
-import { TeaSvg } from "../../../public/svgs/TeaSvg"
-import { CakeSvg } from "../../../public/svgs/CakeSvg"
-import { CoffeeSvg } from "../../../public/svgs/CoffeeSvg"
 import clsx from "clsx"
+import Image from "next/image"
+
+import coffeeImage from '../../../public/images/coffee.jpg'
+import teaImage from '../../../public/images/tea.jpg'
+import cakeImage from '../../../public/images/cake.jpg'
 
 interface IRefreshmentsProps {}
 
@@ -36,7 +38,13 @@ const Refreshments: React.FC<IRefreshmentsProps> = () => {
               </div>
             </div>
 
-            <CoffeeSvg />
+            <Image
+              className={clsx(styles.refreshments__image, styles.refreshments__image_coffee)}
+              src={coffeeImage}
+              alt=''
+              width={240}
+              height={240}
+            />
           </div>
 
           {/* Tea */}
@@ -49,7 +57,13 @@ const Refreshments: React.FC<IRefreshmentsProps> = () => {
               </div>
             </div>
 
-            <TeaSvg />
+            <Image
+              className={clsx(styles.refreshments__image, styles.refreshments__image_tea)}
+              src={teaImage}
+              alt=''
+              width={340}
+              height={340}
+            />
           </div>
 
           {/* Cake */}
@@ -62,7 +76,13 @@ const Refreshments: React.FC<IRefreshmentsProps> = () => {
               </div>
             </div>
 
-            <CakeSvg />
+            <Image
+              className={clsx(styles.refreshments__image, styles.refreshments__image_cake)}
+              src={cakeImage}
+              alt=''
+              width={240}
+              height={240}
+            />
           </div>
 
         </div>
