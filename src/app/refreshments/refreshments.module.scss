@@ -10,10 +10,6 @@
         padding: 56px 16px;
     }
 
-    * {
-        color: #030303;
-    }
-
     &__header {
         width: 100%;
         display: flex;
@@ -23,7 +19,6 @@
         margin-bottom: 56px;
 
         * {
-            color: #fff;
             text-align: center !important;
         }
     }

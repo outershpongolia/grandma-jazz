@@ -105,7 +105,7 @@ const Home: NextPage<IHomeProps> = () => {
         <div className={styles.horizontalLine} />
 
         <Section
-          title="premium quality flowers"
+          title="Premium quality flowers"
           text="Come and experience the finest quality organic cannabis on the island, always sourced from local farmers in Thailand."
           image={flowersImage}
           imageDescription="Marijuana buds in a gift box"
@@ -117,7 +117,7 @@ const Home: NextPage<IHomeProps> = () => {
         <div className={styles.horizontalLine} />
 
         <Section
-          title="get high with rapeeporn"
+          title="Get high with rapeeporn"
           text="Wide, open mountains surround the cafe, bringing calm & ease for good conversation. Rest, with friends or working from a laptop, we've considered your privacy, while you enjoy the little things."
           image={vibeImage}
           imageDescription="Girl is sitting on the balcony, smoking cigarrete and enjoying the view of the jungle"

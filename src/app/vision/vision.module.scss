@@ -35,7 +35,6 @@
     }
 
     &__textWrapper {
-        background-color: #fff;
         max-width: 32%;
         height: 100%;
         display: flex;
@@ -45,12 +44,12 @@
         padding: 24px 40px;
         z-index: 2;
         position: relative;
+        background-color: #030303;
     }
 
     &__text {
-        font-weight: 500;
-        color: #030303;
         font-size: 18px;
+        text-align: end;
     }
 
     &__main {

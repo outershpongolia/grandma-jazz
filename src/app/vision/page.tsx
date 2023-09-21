@@ -29,14 +29,6 @@ const Vision: React.FC<IVisionProps> = () => {
         </div>
       </div>
 
-      {/* <PageHeader
-        image={headerImage}
-        imageDescription={""} 
-        title={""}
-        pageType='vision'
-        text={"Grandma Jazz is passionately dedicated to creating an authentic, local experience in Phuket by fostering a vibrant community built on sustainable practices. We are committed to offering the highest quality cannabis, meticulously sourced and responsibly produced, while promoting education and understanding of its benefits. We aim to be more than just a cafe - we're a place where old traditions meet new insights, where quality is our promise, and where everyone is part of the Grandma Jazz family."}
-      /> */}
-
       <div className={styles.vision__main}>
         <VisionSection
           title='Local.'
