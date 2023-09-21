@@ -29,7 +29,7 @@ const Vision: React.FC<IVisionProps> = () => {
         </div>
       </div>
 
-      <div className={styles.vision__main}>
+      {/* <div className={styles.vision__main}>
         <VisionSection
           title='Local.'
           texts={['no imported weed,', 'coffee from Phuket.']}
@@ -45,13 +45,7 @@ const Vision: React.FC<IVisionProps> = () => {
           title='Sustainable.'
           texts={['no plastic,', 'no animal products,', 'recycled,', 'from the coffee machine & furniture,', 'to the shoes on our feet.']}
         />
-
-        <VisionSection
-          title=''
-          texts={['With love,', 'Grandma Jazz']}
-          reversed
-        />
-      </div>
+      </div> */}
 
     </div>
   )
