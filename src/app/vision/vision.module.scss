@@ -23,15 +23,31 @@
             background: linear-gradient(to right, #030303, #03030365, #0303030b, #03030300);
             z-index: 999;
         }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 56%;
+            height: 100%;
+            width: 56px;
+            background: linear-gradient(to left, #030303, #03030365, #0303030b, #03030300);
+            z-index: 9;
+        }
     }
 
     &__headerImage {
-        width: 70%;
+        width: 60%;
         height: auto;
         position: absolute;
         left: 0;
-        top: -160px;
+        top: -120px;
         z-index: 1;
+
+        @media screen and (max-width: 1008px) {
+            aspect-ratio: 1 / 1;
+            top: 0;
+        }
     }
 
     &__textWrapper {
@@ -42,14 +58,23 @@
         justify-content: center;
         gap: 16px;
         padding: 24px 40px;
-        z-index: 2;
+        z-index: 11;
         position: relative;
         background-color: #030303;
+
+        @media screen and (max-width: 1008px) {
+            width: 320px;
+            max-width: none;
+        }
     }
 
     &__text {
         font-size: 18px;
-        text-align: end;
+        text-align: end !important;
+
+        @media screen and (max-width: 1008px) {
+            font-size: 16px;
+        }
     }
 
     &__main {

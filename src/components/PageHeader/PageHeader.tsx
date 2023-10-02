@@ -10,14 +10,11 @@ interface IPageHeaderProps {
     image: StaticImageData
     imageDescription: string
     title: string
-    text?: string
-    pageType?: 'flowers'
     className?: string
 }
 
-export const PageHeader: React.FC<IPageHeaderProps> = ({ image, imageDescription, title, text, pageType, className }) => {
+export const PageHeader: React.FC<IPageHeaderProps> = ({ image, imageDescription, title, className }) => {
     const titleRef = useRef<HTMLDivElement>(null)
-    const textRef = useRef<HTMLDivElement>(null)
     const headerRef = useRef<HTMLDivElement>(null)
 
     const handleAnimation = useCallback(() => {
@@ -27,7 +24,6 @@ export const PageHeader: React.FC<IPageHeaderProps> = ({ image, imageDescription
 
         if (headerElement) {
             const titleElement = titleRef.current
-            const textElement = textRef.current
 
             if (titleElement) {
                 anime({
@@ -36,16 +32,6 @@ export const PageHeader: React.FC<IPageHeaderProps> = ({ image, imageDescription
                     easing: 'easeOutQuad',
                     duration: 900,
                     delay: 100,
-                })
-            }
-    
-            if (textElement) {
-                anime({
-                    targets: textElement,
-                    opacity: 1,
-                    easing: 'easeOutQuad',
-                    duration: 900,
-                    delay: 400,
                 })
             }
         }
@@ -59,9 +45,7 @@ export const PageHeader: React.FC<IPageHeaderProps> = ({ image, imageDescription
     
     return (
         <div
-            className={clsx(styles.pageHeader, {
-                [styles.pageHeader_flowers]: pageType && pageType === 'flowers'
-            })}
+            className={clsx(styles.pageHeader)}
             ref={headerRef}
         >
             <Image
@@ -73,20 +57,11 @@ export const PageHeader: React.FC<IPageHeaderProps> = ({ image, imageDescription
             <div className={clsx(styles.pageHeader__shadow, className)}></div>
 
             <div
-                className={clsx(styles.pageHeader__text, 'text__title', styles.pageHeader__title)}
+                className={clsx(styles.pageHeader__title, 'text__title')}
                 ref={titleRef}
             >
                 {title}
             </div>
-
-            {text &&
-                <div
-                    className={clsx(styles.pageHeader__description, styles.pageHeader__text, 'text__normal')}
-                    ref={textRef}
-                >
-                    {text}
-                </div>
-            }
         </div>
     )
 }

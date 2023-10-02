@@ -64,6 +64,7 @@
         @media screen and (max-width: 572px) {
             flex-direction: column-reverse !important;
             align-items: center;
+            gap: 16px;
         }
 
         &_tea {
@@ -83,6 +84,7 @@
 
         @media screen and (max-width: 572px) {
             width: 100%;
+            gap: 8px;
         }
     }
 

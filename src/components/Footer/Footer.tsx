@@ -1,29 +1,44 @@
 import React from 'react'
 import styles from './Footer.module.scss'
-import { BsInstagram } from 'react-icons/bs'
-import { BsTwitter } from 'react-icons/bs'
-import { BsFacebook } from 'react-icons/bs'
+import { BsTwitter, BsFacebook, BsInstagram } from 'react-icons/bs'
+import { BiLogoTelegram, BiLogoTiktok } from 'react-icons/bi'
+
 import { FooterIcon } from '../FooterIcon/FooterIcon'
 
 interface IFooterProps {}
+
+const instagramLink = 'https://www.instagram.com/grandmajazzphuket/'
+const facebookLink = 'https://www.facebook.com/Grandmajazzphuket'
+const telegramLink = 'https://t.me/grandmajazz'
+const tiktokLink = 'https://www.tiktok.com/@grandmajazzphuket?_t=8g1yFRmAAuw&_r=1'
 
 export const Footer: React.FC<IFooterProps> = () => {
     return (
         <div className={styles.footer}>
             <div className={styles.footer__icons}>
                 <FooterIcon
-                    link=''
+                    link={instagramLink}
                     icon={<BsInstagram className={styles.footer__icon} />}
                 />
                 
-                <FooterIcon
+                {/* <FooterIcon
                     link=''
                     icon={<BsTwitter className={styles.footer__icon} />}
+                /> */}
+
+                <FooterIcon
+                    link={facebookLink}
+                    icon={<BsFacebook className={styles.footer__icon} />}
                 />
 
                 <FooterIcon
-                    link=''
-                    icon={<BsFacebook className={styles.footer__icon} />}
+                    link={telegramLink}
+                    icon={<BiLogoTelegram className={styles.footer__icon} />}
+                />
+
+                <FooterIcon
+                    link={tiktokLink}
+                    icon={<BiLogoTiktok className={styles.footer__icon} />}
                 />
             </div>
 

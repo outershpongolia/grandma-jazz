@@ -105,7 +105,6 @@ const Flowers: React.FC<IFlowersProps> = () => {
         image={pageHeaderImage}
         imageDescription='Marijuana plant with beautiful green leaves'
         title='Our flowers.'
-        pageType='flowers'
       />
 
       <div className={styles.flowers__main}>
@@ -130,7 +129,7 @@ const Flowers: React.FC<IFlowersProps> = () => {
 
         <div className={styles.flowers__textWrapper}>
           <div className={clsx(styles.flowers__text, 'text__normal text__normal_black')} ref={textRef}>
-            From outdoor, greenhouse to indoor exotic-grade chronic, Sativa, Indica, Hybrids... we got you. Premium flowers sell fast, that's why we are frequently discovering new strains regularly and updating our cannabis stock.
+            From outdoor, greenhouse to indoor exotic-grade chronic, Sativa, Indica, Hybrids... we got you.
           </div>
 
           <div className={clsx(styles.flowers__text, 'text__normal text__normal_black')} ref={secondTextRef}>

@@ -11,9 +11,9 @@ import { PageHeader } from '@/components/PageHeader/PageHeader'
 import Image from 'next/image'
 
 // Images
-import headerImage from '../../public/images/grandma-jazz.png'
+import headerImage from '../../public/images/main2.jpg'
 import introImage from '../../public/images/norm.jpeg'
-import flowersImage from '../../public/images/flowers.jpg'
+import flowersImage from '../../public/images/buds.jpg'
 import vibeImage from '../../public/images/vibe.jpeg'
 import refreshmentsLogo from '../../public/images/logo-1.jpeg'
 import clsx from 'clsx'
@@ -89,13 +89,12 @@ const Home: NextPage<IHomeProps> = () => {
       <PageHeader
         image={headerImage}
         imageDescription='Cannabis flower'
-        title='Grandma Jazz'
-        text='local organic café'
+        title='premium quality flowers'
       />
 
       <div className={styles.home__gradient}>
         <Section
-          title="It's in the details"
+          title="it's in the details"
           text="As you enter the doors of Grandma Jazz, you are instantly kissed with jazz music, Havana hats and a respect for the easy vibes. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           image={introImage}
           imageDescription="Man with a hat"
@@ -105,7 +104,7 @@ const Home: NextPage<IHomeProps> = () => {
         <div className={styles.horizontalLine} />
 
         <Section
-          title="Premium quality flowers"
+          title="premium quality flowers"
           text="Come and experience the finest quality organic cannabis on the island, always sourced from local farmers in Thailand."
           image={flowersImage}
           imageDescription="Marijuana buds in a gift box"
@@ -117,7 +116,7 @@ const Home: NextPage<IHomeProps> = () => {
         <div className={styles.horizontalLine} />
 
         <Section
-          title="Get high with rapeeporn"
+          title="high on the mountain"
           text="Wide, open mountains surround the cafe, bringing calm & ease for good conversation. Rest, with friends or working from a laptop, we've considered your privacy, while you enjoy the little things."
           image={vibeImage}
           imageDescription="Girl is sitting on the balcony, smoking cigarrete and enjoying the view of the jungle"

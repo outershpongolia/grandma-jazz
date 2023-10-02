@@ -69,6 +69,7 @@
 
         @media screen and (max-width: 640px) {
             flex-direction: column;
+            gap: 24px;
             align-items: center;
         }
     }
@@ -86,8 +87,8 @@
 
     &__title {
         text-align: center !important;
-        font-size: 40px;
-        line-height: 48px;
+        font-size: 36px;
+        line-height: 44px;
         font-weight: 500;
         font-family: var(--font-playfair);
         width: 100%;
