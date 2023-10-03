@@ -27,10 +27,11 @@ export const PageHeader: React.FC<IPageHeaderProps> = ({ title, page, className 
             if (titleElement) {
                 anime({
                     targets: titleElement,
-                    opacity: 1,
-                    easing: 'easeOutQuad',
-                    duration: 900,
-                    delay: 100,
+                    translateX: [-3, 0],
+                    translateY: [10, 0],
+                    opacity: [0, 1],
+                    easing: 'easeInQuad',
+                    duration: 800
                 })
             }
         }

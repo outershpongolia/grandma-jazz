@@ -41,9 +41,10 @@ const Flowers: React.FC<IFlowersProps> = () => {
     if (descriptionElement) {
       anime({
         targets: descriptionElement,
-        translateX: [100, 0],
+        translateX: [3, 0],
+        translateY: [10, 0],
         opacity: [0, 1],
-        easing: 'easeOutQuad',
+        easing: 'easeInQuad',
         duration: 800,
         delay: 0
       })
@@ -58,29 +59,25 @@ const Flowers: React.FC<IFlowersProps> = () => {
     if (sectionElement) {
       const logoElement = titleRef.current
       const textElement = textRef.current
-      const secondTextElement = secondTextRef.current
 
-      if (logoElement && textElement && secondTextElement) {
+      if (logoElement && textElement) {
         anime({
           targets: logoElement,
+          translateX: [3, 0],
+          translateY: [10, 0],
           opacity: 1,
-          easing: 'easeOutQuad',
-          duration: 1000,
+          easing: 'easeInQuad',
+          duration: 800,
           delay: 0
         }),
         anime({
           targets: textElement,
+          translateX: [3, 0],
+          translateY: [10, 0],
           opacity: 1,
-          easing: 'easeOutQuad',
-          duration: 1000,
+          easing: 'easeInQuad',
+          duration: 800,
           delay: 300,
-        }),
-        anime({
-          targets: secondTextElement,
-          opacity: 1,
-          easing: 'easeOutQuad',
-          duration: 1000,
-          delay: 600
         })
       }
     }
@@ -131,7 +128,7 @@ const Flowers: React.FC<IFlowersProps> = () => {
             From outdoor, greenhouse to indoor exotic-grade chronic, Sativa, Indica, Hybrids... we got you.
           </div>
 
-          <div className={clsx(styles.flowers__text, 'text__normal text__normal_black')} ref={secondTextRef}>
+          <div className={clsx(styles.flowers__text, 'text__normal text__normal_black')} ref={textRef}>
             Grown 5 minutes away. That's right, we're in heaven, my dears. Check our Instagram page to see what we offer today.
           </div>
         </div>

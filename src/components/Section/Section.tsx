@@ -47,35 +47,39 @@ export const Section: React.FC<ISectionProps> = ({
             if (titleElement && textElement && imageElement) {
                 anime({
                     targets: titleElement,
-                    translateX: name === 'flowers' ? [50, 0] : [-50, 0], // slide in from right : slide in from left
+                    translateX: name === 'flowers' ? [10, 0] : [-10, 0], // slide in from right : slide in from left
+                    translateY: [10, 0],
                     opacity: [0, 1],
                     easing: 'easeOutQuad',
                     duration: 800,
-                    delay: 0
+                    delay: 300
                 }),
                 anime({
                     targets: textElement,
-                    translateX: name === 'flowers' ? [50, 0] : [-50, 0],
+                    translateX: name === 'flowers' ? [10, 0] : [-10, 0],
+                    translateY: [10, 0],
                     opacity: [0, 1],
                     easing: 'easeOutQuad',
                     duration: 800,
-                    delay: 300,
+                    delay: 600,
                 }),
                 anime({
                     targets: imageElement,
-                    translateX: name === 'flowers' ? [-50, 0] : [50, 0],
+                    translateX: name === 'flowers' ? [-10, 0] : [10, 0],
+                    translateY: [10, 0],
                     opacity: [0, 1],
                     easing: 'easeOutQuad',
                     duration: 800,
-                    delay: 0
+                    delay: 300
                 })
             }
 
             if (buttonElement) {
                 anime({
                     targets: buttonElement,
-                    translateX: name === 'vibe' ? [-50, 0] : [50, 0],
-                    opacity: [0, 1],
+                    translateX: name === 'vibe' ? [-10, 0] : [10, 0],
+                    translateY: [10, 0],
+                    opacity: 1,
                     easing: 'easeOutQuad',
                     duration: 800,
                     delay: 600
@@ -85,7 +89,8 @@ export const Section: React.FC<ISectionProps> = ({
             if (shadowElement) {
                 anime({
                     targets: shadowElement,
-                    translateX: name === 'flowers' ? [-50, 0] : [50, 0],
+                    translateX: name === 'flowers' ? [-10, 0] : [10, 0],
+                    translateY: [10, 0],
                     opacity: [0, 1],
                     easing: 'easeOutQuad',
                     duration: 800,
@@ -162,9 +167,12 @@ export const Section: React.FC<ISectionProps> = ({
                     alt={imageDescription}
                 />
 
-                <div ref={shadowRef} className={clsx(styles.section__imageShadow, {
-                    [styles.section__imageShadow_right]: name === 'flowers'
-                })}></div>
+                <div
+                    ref={shadowRef}
+                    className={clsx(styles.section__imageShadow, {
+                        [styles.section__imageShadow_right]: name === 'flowers'
+                    })}
+                />
             </div>
         </div>
     )
