@@ -15,9 +15,8 @@ const Vibe: React.FC<IVibeProps> = () => {
   return (
     <div className={styles.vibe}>
       <PageHeader
-        image={headerImage}
-        imageDescription={''}
-        title="Feel our vibe."
+        title="feel our vibe"
+        page='vibe'
       />
 
       <div className={styles.vibe__main}>

@@ -87,8 +87,7 @@ const Home: NextPage<IHomeProps> = () => {
   return (
     <div className={styles.home}>
       <PageHeader
-        image={headerImage}
-        imageDescription='Cannabis flower'
+        page='home'
         title='premium quality flowers'
       />
 

@@ -1,5 +1,5 @@
 .refreshments {
-    padding: 56px 32px;
+    padding: 88px 32px;
     width: 100%;
 
     @media screen and (max-width: 1240px) {
@@ -17,9 +17,21 @@
         align-items: center;
         gap: 16px;
         margin-bottom: 56px;
+    }
 
-        * {
-            text-align: center !important;
+    &__title {
+        font-size: 72px;
+        line-height: 88px;
+        text-align: center;
+
+        @media screen and (max-width: 1008px) {
+            font-size: 56px;
+            line-height: 64px;
+        }
+
+        @media screen and (max-width: 536px) {
+            font-size: 40px;
+            line-height: 48px;
         }
     }
 

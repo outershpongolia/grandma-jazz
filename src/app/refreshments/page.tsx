@@ -15,7 +15,7 @@ const Refreshments: React.FC<IRefreshmentsProps> = () => {
 
       {/* Header */}
       <div className={styles.refreshments__header}>
-        <div className="text__title">
+        <div className={clsx(styles.refreshments__title, "text__title")}>
           Our local refreshments.
         </div>
 

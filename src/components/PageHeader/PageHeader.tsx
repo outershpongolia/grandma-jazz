@@ -7,13 +7,12 @@ import anime from "animejs"
 import { triggerAnimation } from "@/utils"
 
 interface IPageHeaderProps {
-    image: StaticImageData
-    imageDescription: string
     title: string
+    page: 'home' | 'flowers' | 'vibe' 
     className?: string
 }
 
-export const PageHeader: React.FC<IPageHeaderProps> = ({ image, imageDescription, title, className }) => {
+export const PageHeader: React.FC<IPageHeaderProps> = ({ title, page, className }) => {
     const titleRef = useRef<HTMLDivElement>(null)
     const headerRef = useRef<HTMLDivElement>(null)
 
@@ -45,19 +44,17 @@ export const PageHeader: React.FC<IPageHeaderProps> = ({ image, imageDescription
     
     return (
         <div
-            className={clsx(styles.pageHeader)}
+            className={clsx(styles.pageHeader, {
+                [styles[`pageHeader_${page}`]]: page
+            })}
             ref={headerRef}
         >
-            <Image
-                className={styles.pageHeader__image}
-                src={image}
-                alt={imageDescription}
-            />
-
-            <div className={clsx(styles.pageHeader__shadow, className)}></div>
+            <div className={clsx(styles.pageHeader__shadow, className)} />
 
             <div
-                className={clsx(styles.pageHeader__title, 'text__title')}
+                className={clsx(styles.pageHeader__title, 'text__title', {
+                    [styles[`pageHeader__title_${page}`]]: page
+                })}
                 ref={titleRef}
             >
                 {title}

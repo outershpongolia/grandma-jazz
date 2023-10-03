@@ -4,15 +4,25 @@
     position: relative;
     overflow: hidden;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+    box-shadow: #030303 0px -10px 10px 0px inset;
 
-    @media screen and (max-width: 640px) {
-        padding: 0 16px;
+    &_home {
+        justify-content: flex-end;
+        background-image: url('../../../public/images/main2.jpg');
     }
 
-    @media screen and (max-width: 500px) {
+    &_flowers {
+        background-image: url('../../../public/images/flower.jpg');
+    }
+
+    &_vibe {
+        background-image: url('../../../public/images/main.jpg');
+    }
+
+    @media screen and (max-width: 440px) {
         height: 424px;
     }
 
@@ -25,65 +35,23 @@
         box-shadow: inset 0 0 58px 5px #030303e8;
     }
 
-    &__image {
-        width: 100%;
-        height: auto;
-        position: absolute;
-        z-index: 1;
-        bottom: -30%;
-
-        @media screen and (max-width: 1200px) {
-            bottom: 0;
-        }
-
-        @media screen and (max-width: 784px) {
-            height: 100%;
-            width: auto;
-            left: 0;
-        }
-
-        @media screen and (max-width: 640px) {
-            left: -20%;
-        }
-
-        @media screen and (max-width: 448px) {
-            right: 0;
-            left: auto;
-        }
-    }
-
     &__title {
         z-index: 11;
         opacity: 0;
-        font-size: 56px;
-        line-height: 64px;
-        max-width: 24%;
-        text-align: right !important;
-        margin-right: 24%;
+        max-width: 30%;
+        margin-left: 16%;
 
-        @media screen and (max-width: 1200px) {
-            max-width: 30%;
+        &_home {
+            text-align: right;
+            margin-right: 16%;
+            margin-left: 0;
         }
 
         @media screen and (max-width: 1008px) {
-            font-size: 48px;
-            line-height: 56px;
+            max-width: 40%;
         }
 
-        @media screen and (max-width: 784px) {
-            font-size: 40px;
-            line-height: 48px;
-            margin-right: 18%;
-        }
-
-        @media screen and (max-width: 640px) {
-            font-size: 32px;
-            line-height: 40px;
-            margin-right: 10%;
-            max-width: 36%;
-        }
-
-        @media screen and (max-width: 448px) {
+        @media screen and (max-width: 400px) {
             max-width: 56%;
         }
     }
