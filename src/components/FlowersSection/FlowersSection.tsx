@@ -39,7 +39,6 @@ export const FlowersSection: React.FC<IFlowersSectionProps> = () => {
       if (titleElement && textElement && text2Element && image1Element && image2Element && image3Element && image4Element) {
         anime({
           targets: titleElement,
-          translateX: [10, 0], // slide in from right
           translateY: [10, 0],
           opacity: [0, 1],
           easing: 'easeOutQuad',
@@ -48,7 +47,6 @@ export const FlowersSection: React.FC<IFlowersSectionProps> = () => {
         }),
         anime({
           targets: textElement,
-          translateX: [10, 0],
           translateY: [10, 0],
           opacity: [0, 1],
           easing: 'easeOutQuad',
@@ -66,7 +64,6 @@ export const FlowersSection: React.FC<IFlowersSectionProps> = () => {
         }),
         anime({
           targets: image1Element,
-          translateX: [-10, 0], // slide in from left
           translateY: [10, 0],
           opacity: [0, 1],
           easing: 'easeOutQuad',
@@ -75,7 +72,6 @@ export const FlowersSection: React.FC<IFlowersSectionProps> = () => {
         }),
         anime({
           targets: image2Element,
-          translateX: [-10, 0],
           translateY: [10, 0],
           opacity: [0, 1],
           easing: 'easeOutQuad',
@@ -84,7 +80,6 @@ export const FlowersSection: React.FC<IFlowersSectionProps> = () => {
         }),
         anime({
           targets: image3Element,
-          translateX: [10, 0],
           translateY: [10, 0],
           opacity: [0, 1],
           easing: 'easeOutQuad',
@@ -93,7 +88,6 @@ export const FlowersSection: React.FC<IFlowersSectionProps> = () => {
         }),
         anime({
           targets: image4Element,
-          translateX: [10, 0],
           translateY: [10, 0],
           opacity: [0, 1],
           easing: 'easeOutQuad',
@@ -147,7 +141,7 @@ export const FlowersSection: React.FC<IFlowersSectionProps> = () => {
           <Image
             className={styles.flowersSection__image}
             src={grandmaImage3}
-            alt='Old grandma jumping in her backyard'
+            alt='Old grandma jumping in her backyard.'
           />
         </div>
 

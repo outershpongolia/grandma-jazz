@@ -45,12 +45,14 @@ const Home: NextPage<IHomeProps> = () => {
       if (logoElement && textElement && secondTextElement && buttonElement) {
         anime({
           targets: logoElement,
+          translateY: [10, 0],
           opacity: 1,
           easing: 'easeOutQuad',
           duration: 1000
         }),
         anime({
           targets: textElement,
+          translateY: [10, 0],
           opacity: 1,
           easing: 'easeOutQuad',
           duration: 1000,
@@ -58,6 +60,7 @@ const Home: NextPage<IHomeProps> = () => {
         }),
         anime({
           targets: secondTextElement,
+          translateY: [10, 0],
           opacity: 1,
           easing: 'easeOutQuad',
           duration: 1000,
@@ -65,6 +68,7 @@ const Home: NextPage<IHomeProps> = () => {
         }),
         anime({
           targets: buttonElement,
+          translateY: [10, 0],
           opacity: 1,
           easing: 'easeOutQuad',
           duration: 1000,

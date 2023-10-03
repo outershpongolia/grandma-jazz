@@ -17,8 +17,6 @@ const Flowers: React.FC<IFlowersProps> = () => {
   const descriptionRef = useRef<HTMLDivElement>(null)
   const sectionRef = useRef<HTMLDivElement>(null)
   const titleRef = useRef<HTMLDivElement>(null)
-  const textRef = useRef<HTMLDivElement>(null)
-  const secondTextRef = useRef<HTMLDivElement>(null)
 
   const navigateToInstagram = useCallback(() => {
     const instagramUrl = 'https://www.instagram.com/stories/highlights/17971187909126277/'
@@ -41,12 +39,11 @@ const Flowers: React.FC<IFlowersProps> = () => {
     if (descriptionElement) {
       anime({
         targets: descriptionElement,
-        translateX: [3, 0],
         translateY: [10, 0],
         opacity: [0, 1],
         easing: 'easeInQuad',
         duration: 800,
-        delay: 0
+        delay: 600
       })
     }
   }, [])
@@ -58,26 +55,15 @@ const Flowers: React.FC<IFlowersProps> = () => {
 
     if (sectionElement) {
       const logoElement = titleRef.current
-      const textElement = textRef.current
 
-      if (logoElement && textElement) {
+      if (logoElement) {
         anime({
           targets: logoElement,
-          translateX: [3, 0],
           translateY: [10, 0],
-          opacity: 1,
+          opacity: [0, 1],
           easing: 'easeInQuad',
           duration: 800,
           delay: 0
-        }),
-        anime({
-          targets: textElement,
-          translateX: [3, 0],
-          translateY: [10, 0],
-          opacity: 1,
-          easing: 'easeInQuad',
-          duration: 800,
-          delay: 300,
         })
       }
     }
@@ -120,17 +106,7 @@ const Flowers: React.FC<IFlowersProps> = () => {
 
       <div className={clsx(styles.flowers__whiteSection, 'white-section')} ref={sectionRef}>
         <div className={clsx(styles.flowers__text, styles.flowers__title, 'text__normal text__normal_black')} ref={titleRef}>
-          Why would you love it here?
-        </div>
-
-        <div className={styles.flowers__textWrapper}>
-          <div className={clsx(styles.flowers__text, 'text__normal text__normal_black')} ref={textRef}>
-            From outdoor, greenhouse to indoor exotic-grade chronic, Sativa, Indica, Hybrids... we got you.
-          </div>
-
-          <div className={clsx(styles.flowers__text, 'text__normal text__normal_black')} ref={textRef}>
-            Grown 5 minutes away. That's right, we're in heaven, my dears. Check our Instagram page to see what we offer today.
-          </div>
+          Why local?
         </div>
 
         <div className={styles.flowers__navButton} onClick={navigateToInstagram}>

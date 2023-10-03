@@ -47,7 +47,6 @@ export const Section: React.FC<ISectionProps> = ({
             if (titleElement && textElement && imageElement) {
                 anime({
                     targets: titleElement,
-                    translateX: name === 'flowers' ? [10, 0] : [-10, 0], // slide in from right : slide in from left
                     translateY: [10, 0],
                     opacity: [0, 1],
                     easing: 'easeOutQuad',
@@ -56,7 +55,6 @@ export const Section: React.FC<ISectionProps> = ({
                 }),
                 anime({
                     targets: textElement,
-                    translateX: name === 'flowers' ? [10, 0] : [-10, 0],
                     translateY: [10, 0],
                     opacity: [0, 1],
                     easing: 'easeOutQuad',
@@ -65,7 +63,6 @@ export const Section: React.FC<ISectionProps> = ({
                 }),
                 anime({
                     targets: imageElement,
-                    translateX: name === 'flowers' ? [-10, 0] : [10, 0],
                     translateY: [10, 0],
                     opacity: [0, 1],
                     easing: 'easeOutQuad',
@@ -77,9 +74,8 @@ export const Section: React.FC<ISectionProps> = ({
             if (buttonElement) {
                 anime({
                     targets: buttonElement,
-                    translateX: name === 'vibe' ? [-10, 0] : [10, 0],
                     translateY: [10, 0],
-                    opacity: 1,
+                    opacity: [0, 1],
                     easing: 'easeOutQuad',
                     duration: 800,
                     delay: 600
@@ -89,7 +85,6 @@ export const Section: React.FC<ISectionProps> = ({
             if (shadowElement) {
                 anime({
                     targets: shadowElement,
-                    translateX: name === 'flowers' ? [-10, 0] : [10, 0],
                     translateY: [10, 0],
                     opacity: [0, 1],
                     easing: 'easeOutQuad',

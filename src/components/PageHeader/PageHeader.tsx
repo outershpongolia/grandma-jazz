@@ -27,7 +27,6 @@ export const PageHeader: React.FC<IPageHeaderProps> = ({ title, page, className 
             if (titleElement) {
                 anime({
                     targets: titleElement,
-                    translateX: [-3, 0],
                     translateY: [10, 0],
                     opacity: [0, 1],
                     easing: 'easeInQuad',
