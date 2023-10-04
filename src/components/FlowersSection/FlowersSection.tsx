@@ -94,7 +94,7 @@ export const FlowersSection: React.FC<IFlowersSectionProps> = () => {
         </div>
 
         <div className={styles.flowersSection__textWrapper}>
-          <div className={clsx(styles.flowers__text, 'text__subtitle')} ref={titleRef}>Premium quality flowers.</div>
+          <div className={clsx(styles.flowers__text, 'text__subtitle')} ref={titleRef}>premium quality flowers</div>
 
           <div className={clsx(styles.flowers__text, 'text__normal')} ref={textRef}>
             Come and experience the finest quality organic cannabis on the island, always sourced from local farmers in Thailand.

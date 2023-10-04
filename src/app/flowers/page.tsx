@@ -9,6 +9,7 @@ import anime from "animejs"
 import { triggerAnimation } from "@/utils"
 import clsx from "clsx"
 import { defaultSlideUpAnimation } from "@/constants"
+import { QuestionCard } from "@/components/QuestionCard/QuestionCard"
 
 interface IFlowersProps {}
 
@@ -16,11 +17,9 @@ const Flowers: React.FC<IFlowersProps> = () => {
   const [ isSmallScreen, setIsSmallScreen ] = useState(false)
 
   const descriptionRef = useRef<HTMLDivElement>(null)
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const titleRef = useRef<HTMLDivElement>(null)
 
   const navigateToInstagram = useCallback(() => {
-    const instagramUrl = 'https://www.instagram.com/stories/highlights/17971187909126277/'
+    const instagramUrl = 'https://www.instagram.com/grandmajazzphuket/'
     window.open(instagramUrl, '_blank')
   }, [])
 
@@ -32,7 +31,7 @@ const Flowers: React.FC<IFlowersProps> = () => {
     }
   }, [setIsSmallScreen])
 
-  const handleSlideAnimation = useCallback(() => {
+  const handleSlideUpAnimation = useCallback(() => {
     if (!window) return
 
     const descriptionElement = descriptionRef.current
@@ -46,34 +45,11 @@ const Flowers: React.FC<IFlowersProps> = () => {
     }
   }, [])
 
-  const handleFadeInAnimation = useCallback(() => {
-    if (!window) return
-
-    const sectionElement = sectionRef.current
-
-    if (sectionElement) {
-      const logoElement = titleRef.current
-
-      if (logoElement) {
-        anime({
-          targets: logoElement,
-          ...defaultSlideUpAnimation
-        })
-      }
-    }
-  }, [])
-
   useEffect(() => {
     if (descriptionRef.current) {
-      triggerAnimation(descriptionRef.current, handleSlideAnimation)
+      triggerAnimation(descriptionRef.current, handleSlideUpAnimation)
     }
   }, [])
-
-  useEffect(() => {
-    if (sectionRef.current) {
-      triggerAnimation(sectionRef.current, handleFadeInAnimation)
-    }
-  })
 
   return (
     <div className={styles.flowers}>
@@ -98,20 +74,35 @@ const Flowers: React.FC<IFlowersProps> = () => {
         }
       </div>
 
-      <div className={clsx(styles.flowers__whiteSection, 'white-section')} ref={sectionRef}>
-        <div className={clsx(styles.flowers__text, styles.flowers__title, 'text__normal text__normal_black')} ref={titleRef}>
-          Why local?
-        </div>
+      <div className={styles.flowers__questions}>
+        {/* <div className="text__subtitle">What's the difference between indica, sativa & hybrid?</div> */}
+        <QuestionCard
+          question='What is the difference?'
+          answers={['used for several medicinal and recreational purposes', 'sativa has primarily an energizing effect', 'indica has a relaxing effect and can help you sleep']}
+        />
 
+        <QuestionCard
+          question='Why local?'
+          answers={['fresher', 'greater variety', 'reduced environmental impact', 'support local economies', 'access to information']}
+        />
+
+        <QuestionCard
+          question='Why Organic?'
+          answers={['healthier for consumer', 'no pesticides or heavy metals', 'better for environment', 'higher quality', 'more natural terpenes']}
+        />
+      </div>
+
+      <div className={styles.flowers__whiteSection}>
+        {/* navButton */}
         <div className={styles.flowers__navButton} onClick={navigateToInstagram}>
           <div className={styles.flowers__dot}>
             <video className={styles.flowers__video} autoPlay loop>
-              <source src='/videos/example-video-short.mp4' type='video/mp4' />
+              <source src='/videos/button.mp4' type='video/mp4' />
             </video>
           </div>
 
           <div className={clsx(styles.flowers__buttonText, 'text__normal')}>
-            see our instagram
+            see our stock
 
             <div className={styles.flowers__underline} />
           </div>
