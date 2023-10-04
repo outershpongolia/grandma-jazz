@@ -1,4 +1,4 @@
-export const triggerAnimation = (ref: HTMLDivElement | SVGSVGElement, callback: () => void) => {
+export const slideUpAnimation = (ref: HTMLDivElement | SVGSVGElement, callback: () => void) => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {

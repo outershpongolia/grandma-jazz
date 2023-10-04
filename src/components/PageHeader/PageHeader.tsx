@@ -4,7 +4,7 @@ import styles from "./PageHeader.module.scss"
 import Image, { StaticImageData } from "next/image"
 import clsx from "clsx"
 import anime from "animejs"
-import { triggerAnimation } from "@/utils"
+import { slideUpAnimation } from "@/utils"
 import { defaultSlideUpAnimation } from "@/constants"
 
 interface IPageHeaderProps {
@@ -36,7 +36,7 @@ export const PageHeader: React.FC<IPageHeaderProps> = ({ title, page, className 
 
     useEffect(() => {
         if (headerRef.current) {
-            triggerAnimation(headerRef.current, handleAnimation)
+            slideUpAnimation(headerRef.current, handleAnimation)
         }
     }, [])
     

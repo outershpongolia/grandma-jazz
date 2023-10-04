@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef } from 'react'
 import styles from './FlowersSection.module.scss'
-import { triggerAnimation } from '@/utils'
+import { slideUpAnimation } from '@/utils'
 import anime from 'animejs'
 import clsx from 'clsx'
 import Image from 'next/image'
@@ -78,7 +78,7 @@ export const FlowersSection: React.FC<IFlowersSectionProps> = () => {
 
   useEffect(() => {
     if (sectionRef.current) {
-      triggerAnimation(sectionRef.current, handleSlideAnimation)
+      slideUpAnimation(sectionRef.current, handleSlideAnimation)
     }
   }, [])
 

@@ -6,7 +6,7 @@ import pageHeaderImage from '../../../public/images/flower.jpg'
 import { FlowersSection } from "@/components/FlowersSection/FlowersSection"
 import { MobileFlowersSection } from "@/components/FlowersSection/MobileFlowersSection/MobileFlowersSection"
 import anime from "animejs"
-import { triggerAnimation } from "@/utils"
+import { slideUpAnimation } from "@/utils"
 import clsx from "clsx"
 import { defaultSlideUpAnimation } from "@/constants"
 import { QuestionCard } from "@/components/QuestionCard/QuestionCard"
@@ -47,14 +47,13 @@ const Flowers: React.FC<IFlowersProps> = () => {
 
   useEffect(() => {
     if (descriptionRef.current) {
-      triggerAnimation(descriptionRef.current, handleSlideUpAnimation)
+      slideUpAnimation(descriptionRef.current, handleSlideUpAnimation)
     }
   }, [])
 
   return (
     <div className={styles.flowers}>
       <PageHeader
-        className={styles.flowers__header}
         title='our flowers'
         page="flowers"
       />

@@ -53,6 +53,10 @@
         flex-direction: column;
         gap: 32px;
         padding: 0 32px;
+
+        @media screen and (max-width: 440px) {
+            padding: 0 16px;
+        }
     }
 
     &__whiteSection {

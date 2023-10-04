@@ -4,7 +4,7 @@ import clsx from "clsx"
 import Image, { StaticImageData } from 'next/image'
 import { Button } from "../Button/Button"
 import anime from "animejs"
-import { triggerAnimation } from "@/utils"
+import { slideUpAnimation } from "@/utils"
 import { defaultSlideUpAnimation } from "@/constants"
 
 interface ISectionProps extends PropsWithChildren {
@@ -83,7 +83,7 @@ export const Section: React.FC<ISectionProps> = ({
 
     useEffect(() => {
         if (sectionRef.current) {
-            triggerAnimation(sectionRef.current, handleSlideAnimation)
+            slideUpAnimation(sectionRef.current, handleSlideAnimation)
         }
     }, [])
 

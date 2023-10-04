@@ -17,7 +17,7 @@ import flowersImage from '../../public/images/buds.jpg'
 import vibeImage from '../../public/images/vibe.jpeg'
 import refreshmentsLogo from '../../public/images/logo-1.jpeg'
 import clsx from 'clsx'
-import { triggerAnimation } from '@/utils'
+import { slideUpAnimation } from '@/utils'
 import anime from 'animejs'
 
 interface IHomeProps {}
@@ -68,7 +68,7 @@ const Home: NextPage<IHomeProps> = () => {
 
   useEffect(() => {
     if (sectionRef.current) {
-      triggerAnimation(sectionRef.current, handleFadeInAnimation)
+      slideUpAnimation(sectionRef.current, handleFadeInAnimation)
     }
   }, [])
 

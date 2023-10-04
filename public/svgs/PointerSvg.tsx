@@ -1,5 +1,5 @@
 "use client"
-import { triggerAnimation } from '@/utils'
+import { slideUpAnimation } from '@/utils'
 import anime from 'animejs'
 import React, { useCallback, useEffect, useRef } from 'react'
 
@@ -35,7 +35,7 @@ export const PointerSvg: React.FC<IPointerSvgProps> = () => {
 
   useEffect(() => {
     if (svgRef.current) {
-      triggerAnimation(svgRef.current, handleAnimateSvg)
+      slideUpAnimation(svgRef.current, handleAnimateSvg)
     }
   }, [])
   
