@@ -9,6 +9,7 @@ import grandmaImage from '../../../public/images/grandma1.jpeg'
 import grandmaImage2 from '../../../public/images/grandma2.jpeg'
 import grandmaImage3 from '../../../public/images/jump.jpeg'
 import grandmaImage4 from '../../../public/images/grandma3.png'
+import { defaultSlideUpAnimation } from '@/constants'
 
 interface IFlowersSectionProps {}
 
@@ -39,59 +40,36 @@ export const FlowersSection: React.FC<IFlowersSectionProps> = () => {
       if (titleElement && textElement && text2Element && image1Element && image2Element && image3Element && image4Element) {
         anime({
           targets: titleElement,
-          translateY: [10, 0],
-          opacity: [0, 1],
-          easing: 'easeOutQuad',
-          duration: 800,
-          delay: 0
+          ...defaultSlideUpAnimation
         }),
         anime({
           targets: textElement,
-          translateY: [10, 0],
-          opacity: [0, 1],
-          easing: 'easeOutQuad',
-          duration: 800,
+          ...defaultSlideUpAnimation,
           delay: 300,
         }),
         anime({
           targets: text2Element,
           translateX: [10, 0],
-          translateY: [10, 0],
-          opacity: [0, 1],
-          easing: 'easeOutQuad',
-          duration: 800,
+          ...defaultSlideUpAnimation,
           delay: 600
         }),
         anime({
           targets: image1Element,
-          translateY: [10, 0],
-          opacity: [0, 1],
-          easing: 'easeOutQuad',
-          duration: 800,
-          delay: 0
+          ...defaultSlideUpAnimation
         }),
         anime({
           targets: image2Element,
-          translateY: [10, 0],
-          opacity: [0, 1],
-          easing: 'easeOutQuad',
-          duration: 800,
+          ...defaultSlideUpAnimation,
           delay: 300
         }),
         anime({
           targets: image3Element,
-          translateY: [10, 0],
-          opacity: [0, 1],
-          easing: 'easeOutQuad',
-          duration: 800,
+          ...defaultSlideUpAnimation,
           delay: 300
         }),
         anime({
           targets: image4Element,
-          translateY: [10, 0],
-          opacity: [0, 1],
-          easing: 'easeOutQuad',
-          duration: 800,
+          ...defaultSlideUpAnimation,
           delay: 600
         })
       }

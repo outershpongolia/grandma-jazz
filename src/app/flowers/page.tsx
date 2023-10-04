@@ -8,6 +8,7 @@ import { MobileFlowersSection } from "@/components/FlowersSection/MobileFlowersS
 import anime from "animejs"
 import { triggerAnimation } from "@/utils"
 import clsx from "clsx"
+import { defaultSlideUpAnimation } from "@/constants"
 
 interface IFlowersProps {}
 
@@ -39,10 +40,7 @@ const Flowers: React.FC<IFlowersProps> = () => {
     if (descriptionElement) {
       anime({
         targets: descriptionElement,
-        translateY: [10, 0],
-        opacity: [0, 1],
-        easing: 'easeInQuad',
-        duration: 800,
+        ...defaultSlideUpAnimation,
         delay: 600
       })
     }
@@ -59,11 +57,7 @@ const Flowers: React.FC<IFlowersProps> = () => {
       if (logoElement) {
         anime({
           targets: logoElement,
-          translateY: [10, 0],
-          opacity: [0, 1],
-          easing: 'easeInQuad',
-          duration: 800,
-          delay: 0
+          ...defaultSlideUpAnimation
         })
       }
     }

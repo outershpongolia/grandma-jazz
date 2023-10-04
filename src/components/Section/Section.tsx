@@ -5,6 +5,7 @@ import Image, { StaticImageData } from 'next/image'
 import { Button } from "../Button/Button"
 import anime from "animejs"
 import { triggerAnimation } from "@/utils"
+import { defaultSlideUpAnimation } from "@/constants"
 
 interface ISectionProps extends PropsWithChildren {
     title: string
@@ -47,26 +48,17 @@ export const Section: React.FC<ISectionProps> = ({
             if (titleElement && textElement && imageElement) {
                 anime({
                     targets: titleElement,
-                    translateY: [10, 0],
-                    opacity: [0, 1],
-                    easing: 'easeOutQuad',
-                    duration: 800,
+                    ...defaultSlideUpAnimation,
                     delay: 300
                 }),
                 anime({
                     targets: textElement,
-                    translateY: [10, 0],
-                    opacity: [0, 1],
-                    easing: 'easeOutQuad',
-                    duration: 800,
+                    ...defaultSlideUpAnimation,
                     delay: 600,
                 }),
                 anime({
                     targets: imageElement,
-                    translateY: [10, 0],
-                    opacity: [0, 1],
-                    easing: 'easeOutQuad',
-                    duration: 800,
+                    ...defaultSlideUpAnimation,
                     delay: 300
                 })
             }
@@ -74,10 +66,7 @@ export const Section: React.FC<ISectionProps> = ({
             if (buttonElement) {
                 anime({
                     targets: buttonElement,
-                    translateY: [10, 0],
-                    opacity: [0, 1],
-                    easing: 'easeOutQuad',
-                    duration: 800,
+                    ...defaultSlideUpAnimation,
                     delay: 600
                 })
             }
@@ -85,10 +74,7 @@ export const Section: React.FC<ISectionProps> = ({
             if (shadowElement) {
                 anime({
                     targets: shadowElement,
-                    translateY: [10, 0],
-                    opacity: [0, 1],
-                    easing: 'easeOutQuad',
-                    duration: 800,
+                    ...defaultSlideUpAnimation,
                     delay: 600
                 })
             }

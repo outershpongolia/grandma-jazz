@@ -5,6 +5,7 @@ import Image, { StaticImageData } from "next/image"
 import clsx from "clsx"
 import anime from "animejs"
 import { triggerAnimation } from "@/utils"
+import { defaultSlideUpAnimation } from "@/constants"
 
 interface IPageHeaderProps {
     title: string
@@ -27,10 +28,7 @@ export const PageHeader: React.FC<IPageHeaderProps> = ({ title, page, className 
             if (titleElement) {
                 anime({
                     targets: titleElement,
-                    translateY: [10, 0],
-                    opacity: [0, 1],
-                    easing: 'easeInQuad',
-                    duration: 800
+                    ...defaultSlideUpAnimation
                 })
             }
         }

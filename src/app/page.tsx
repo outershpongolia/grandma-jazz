@@ -4,7 +4,7 @@ import styles from './page.module.scss'
 import { Section } from '@/components/Section/Section'
 import { Button } from '@/components/Button/Button'
 import { useRouter } from 'next/navigation'
-import { ERoute } from '@/constants'
+import { ERoute, defaultSlideUpAnimation } from '@/constants'
 import { GoogleMapSection } from '@/components/GoogleMapSection/GoogleMapSection'
 import { NextPage } from 'next'
 import { PageHeader } from '@/components/PageHeader/PageHeader'
@@ -45,33 +45,21 @@ const Home: NextPage<IHomeProps> = () => {
       if (logoElement && textElement && secondTextElement && buttonElement) {
         anime({
           targets: logoElement,
-          translateY: [10, 0],
-          opacity: 1,
-          easing: 'easeOutQuad',
-          duration: 1000
+          ...defaultSlideUpAnimation
         }),
         anime({
           targets: textElement,
-          translateY: [10, 0],
-          opacity: 1,
-          easing: 'easeOutQuad',
-          duration: 1000,
+          ...defaultSlideUpAnimation,
           delay: 400,
         }),
         anime({
           targets: secondTextElement,
-          translateY: [10, 0],
-          opacity: 1,
-          easing: 'easeOutQuad',
-          duration: 1000,
+          ...defaultSlideUpAnimation,
           delay: 700
         }),
         anime({
           targets: buttonElement,
-          translateY: [10, 0],
-          opacity: 1,
-          easing: 'easeOutQuad',
-          duration: 1000,
+          ...defaultSlideUpAnimation,
           delay: 1000
         })
       }
