@@ -21,7 +21,7 @@ export const Video: React.FC<IVideoProps> = ({ video }) => {
           videoElement.pause()
         }
       })
-    }, {threshold: 0.6})
+    }, {threshold: 0})
   
     observer.observe(videoElement)
   }, [])
