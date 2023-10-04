@@ -3,9 +3,11 @@ import { slideUpAnimation } from '@/utils'
 import anime from 'animejs'
 import React, { useCallback, useEffect, useRef } from 'react'
 
-interface IPointerSvgProps {}
+interface IPointerSvgProps {
+  className?: string
+}
 
-export const PointerSvg: React.FC<IPointerSvgProps> = () => {
+export const PointerSvg: React.FC<IPointerSvgProps> = ({ className }) => {
   const pathRefs = useRef<SVGPathElement[]>([])
   const svgRef = useRef<SVGSVGElement>(null)
 
@@ -41,6 +43,7 @@ export const PointerSvg: React.FC<IPointerSvgProps> = () => {
   
   return (
     <svg
+      className={className}
       version="1.1"
       id="svg1"
       width={280}

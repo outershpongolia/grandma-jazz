@@ -1,8 +1,13 @@
 .video {
-    width: 274px;
-    height: 480px;
+    width: 270px;
+    // height: 480px;
+    aspect-ratio: 9 / 16;
     position: relative;
     z-index: 2;
     border-radius: 16px;
     overflow: hidden;
+
+    @media screen and (max-width: 736px) {
+        width: 240px;
+    }
 }

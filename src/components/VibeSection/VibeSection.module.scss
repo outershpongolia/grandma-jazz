@@ -3,6 +3,11 @@
     display: flex;
     width: 100%;
 
+    @media screen and (max-width: 736px) {
+        flex-direction: column-reverse !important;
+        gap: 24px;
+    }
+
     &_reversed {
         flex-direction: row-reverse;
     }
@@ -14,6 +19,15 @@
         flex-direction: column;
         gap: 16px;
 
+        @media screen and (max-width: 736px) {
+            width: 100%;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
         &_reversed {
             align-items: flex-end;
         }
@@ -22,15 +36,23 @@
     &__textWrapper {
         position: sticky;
         top: 33%;
-        width: 420px;
+        width: 100%;
         height: auto;
         display: flex;
         flex-direction: column;
         gap: 16px;
+
+        @media screen and (max-width: 736px) {
+            position: relative;
+        }
     }
 
     &__text {
         text-align: end;
+
+        @media screen and (max-width: 736px) {
+            text-align: center !important;
+        }
 
         &_reversed {
             text-align: start;
