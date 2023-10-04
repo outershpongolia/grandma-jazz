@@ -75,9 +75,8 @@ const Flowers: React.FC<IFlowersProps> = () => {
       </div>
 
       <div className={styles.flowers__questions}>
-        {/* <div className="text__subtitle">What's the difference between indica, sativa & hybrid?</div> */}
         <QuestionCard
-          question='What is the difference?'
+          question="What's the difference?"
           answers={['used for several medicinal and recreational purposes', 'sativa has primarily an energizing effect', 'indica has a relaxing effect and can help you sleep']}
         />
 
