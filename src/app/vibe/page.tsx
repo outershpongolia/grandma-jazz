@@ -7,6 +7,7 @@ import { PageHeader } from '@/components/PageHeader/PageHeader'
 import { Review } from '@/components/Review/Review'
 
 import quotes from '../../../quotes.json'
+import { uniqueId } from 'lodash'
 
 interface IVibeProps {}
 
@@ -58,6 +59,7 @@ const Vibe: React.FC<IVibeProps> = () => {
         {quotes.map((quote, index) => {
           return (
             <Review
+              key={uniqueId(quote.quote)}
               quote={quote.quote}
               username={quote.username}
               color={
