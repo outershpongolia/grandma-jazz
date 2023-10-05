@@ -1,16 +1,28 @@
 "use client"
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from './vibe.module.scss'
 import { VibeSection } from '@/components/VibeSection/VibeSection'
 import { PointerSvg } from '../../../public/svgs/PointerSvg'
 import { PageHeader } from '@/components/PageHeader/PageHeader'
+import { Review } from '@/components/Review/Review'
 
-import headerImage from '../../../public/images/vibe3.jpg'
+import quotes from '../../../quotes.json'
 
 interface IVibeProps {}
 
 const Vibe: React.FC<IVibeProps> = () => {
+  const [ isMediumScreen, setIsMediumScreen ] = useState(false)
+
   const svgContainerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (window) {
+      const mediumScreen = matchMedia('(max-width: 1008px)')
+      const smallScreen = matchMedia('(max-width: 640px)')
+
+      setIsMediumScreen(mediumScreen.matches && !smallScreen.matches)
+    }
+  }, [setIsMediumScreen])
 
   return (
     <div className={styles.vibe}>
@@ -40,6 +52,22 @@ const Vibe: React.FC<IVibeProps> = () => {
             'Indulge yourself in a good conversation, dive into a good book or play some of our classic table games for a more upbeat tempo. '
           ]}
         />
+      </div>
+
+      <div className={styles.vibe__reviews}>
+        {quotes.map((quote, index) => {
+          return (
+            <Review
+              quote={quote.quote}
+              username={quote.username}
+              color={
+                isMediumScreen
+                ? index % 3 === 0 ? 'white' : 'black'
+                : index % 2 === 0 ? 'white' : 'black'
+              }
+            />
+          )
+        })}
       </div>
     </div>
   )

@@ -1,0 +1,45 @@
+.review {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 24px;
+    aspect-ratio: 1 / 1;
+    text-align: center;
+
+    @media screen and (max-width: 1008px) {
+        aspect-ratio: 5 / 4;
+    }
+
+    &_white {
+        background-color: #fff;
+
+        & .review__text {
+            color: #030303;
+        }
+    }
+
+    &_black {
+        background-color: #030303;
+
+        & .review__text {
+            color: #fff;
+        }
+    }
+
+    &__text {
+        color: #fff;
+
+        @media screen and (max-width: 1008px) {
+            font-size: 16px !important;
+            line-height: 24px !important;
+        }
+    }
+
+    &__quote {
+        font-family: var(--font-playfair);
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
