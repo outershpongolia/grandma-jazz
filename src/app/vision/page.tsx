@@ -7,9 +7,9 @@ import { VisionSection } from "@/components/VisionSection/VisionSection"
 import { uniqueId } from "lodash"
 import { PageHeader } from "@/components/PageHeader/PageHeader"
 import { Section } from "@/components/Section/Section"
-import image1 from '../../../public/images/R6__5372.jpg'
-import image2 from '../../../public/images/R6__5362.jpg'
-import image3 from '../../../public/images/IMG_0803.jpg'
+import image1 from '../../../public/images/vision1.jpg'
+import image2 from '../../../public/images/vision2.jpg'
+import image3 from '../../../public/images/vision3.jpg'
 
 interface IVisionProps {}
 
