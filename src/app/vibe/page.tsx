@@ -8,6 +8,7 @@ import { Review } from '@/components/Review/Review'
 
 import quotes from '../../../quotes.json'
 import { uniqueId } from 'lodash'
+import clsx from 'clsx'
 
 interface IVibeProps {}
 
@@ -53,6 +54,10 @@ const Vibe: React.FC<IVibeProps> = () => {
             'Indulge yourself in a good conversation, dive into a good book or play some of our classic table games for a more upbeat tempo. '
           ]}
         />
+      </div>
+
+      <div className={clsx(styles.vibe__text, 'text__subtitle')}>
+        see what our customers have to say
       </div>
 
       <div className={styles.vibe__reviews}>

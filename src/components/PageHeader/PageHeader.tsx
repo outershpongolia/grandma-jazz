@@ -9,7 +9,7 @@ import { defaultSlideUpAnimation } from "@/constants"
 
 interface IPageHeaderProps {
     title: string
-    page: 'home' | 'flowers' | 'vibe' 
+    page: 'home' | 'flowers' | 'vibe' | 'vision'
     className?: string
 }
 

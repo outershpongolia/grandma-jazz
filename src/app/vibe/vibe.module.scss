@@ -41,6 +41,13 @@
         }
     }
 
+    &__text {
+        text-align: center !important;
+        max-width: 1000px;
+        padding: 80px 32px;
+        margin: 0 auto;
+    }
+
     &__reviews {
         width: 100%;
         margin: 0 auto;
@@ -54,7 +61,7 @@
             grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
         }
 
-        @media screen and (max-width: 1008px) {
+        @media screen and (max-width: 640px) {
             grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
         }
     }

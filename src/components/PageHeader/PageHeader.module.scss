@@ -21,6 +21,34 @@
         background-image: url('../../../public/images/main.jpg');
     }
 
+    &_vision {
+        background-image: url('../../../public/images/vision-grandma.png');
+        max-width: 900px;
+        margin: 0 auto;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 56px;
+            background: linear-gradient(to right, #030303, #03030365, #0303030b, #03030300);
+            z-index: 999;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 56px;
+            background: linear-gradient(to left, #030303, #03030365, #0303030b, #03030300);
+            z-index: 9;
+        }
+    }
+
     @media screen and (max-width: 440px) {
         height: 424px;
     }

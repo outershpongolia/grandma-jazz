@@ -1,12 +1,15 @@
+"use client"
 import React from "react"
 import styles from './vision.module.scss'
 import Image from "next/image"
-
-import headerImage from '../../../public/images/vision-grandma.png'
-
-import { VisionSection } from "@/components/VisionSection/VisionSection"
 import clsx from "clsx"
+import { VisionSection } from "@/components/VisionSection/VisionSection"
 import { uniqueId } from "lodash"
+import { PageHeader } from "@/components/PageHeader/PageHeader"
+import { Section } from "@/components/Section/Section"
+import image1 from '../../../public/images/R6__5372.jpg'
+import image2 from '../../../public/images/R6__5362.jpg'
+import image3 from '../../../public/images/IMG_0803.jpg'
 
 interface IVisionProps {}
 
@@ -15,38 +18,31 @@ const texts = ["Grandma Jazz is passionately dedicated to creating an authentic,
 const Vision: React.FC<IVisionProps> = () => {
   return (
     <div className={styles.vision}>
-      <div className={styles.vision__header}>
-        <Image
-          className={styles.vision__headerImage}
-          src={headerImage}
-          alt={""}
-        />
+      <PageHeader title="" page="vision"  />
 
-        <div className={styles.vision__textWrapper}>
-          {texts && texts.map(text => {
-            return <div key={uniqueId(text)} className={clsx(styles.vision__text, 'text__normal')}>{text}</div>
-          })}
-        </div>
-      </div>
+      <Section
+        title=""
+        text="Grandma Jazz is passionately dedicated to creating an authentic, local experience in Phuket by fostering a vibrant community built on sustainable practices. We aim to be more than just a cafe - we're a place where old traditions meet new insights, where quality is our promise and where everyone is part of the Grandma Jazz family."
+        image={image1}
+        imageDescription=""
+        name='vision'
+      />
 
-      {/* <div className={styles.vision__main}>
-        <VisionSection
-          title='Local.'
-          texts={['no imported weed,', 'coffee from Phuket.']}
-        />
+      <Section
+        title="Grandma"
+        text="In recognition of every Grandma out there and beyond, who without having done her own thing in life, would not have given us the life we have today. If you think about it, without “Grandma”, none of this is possible."
+        image={image2}
+        imageDescription=""
+        name='flowers'
+      />
 
-        <VisionSection
-          title='Experience.'
-          texts={['comfortable seating,', 'considerate lighting,', 'clean environment,', 'cultured music,', 'compassionate stuff,', 'table service,', 'countless details,', 'all for you.']}
-          reversed
-        />
-
-        <VisionSection
-          title='Sustainable.'
-          texts={['no plastic,', 'no animal products,', 'recycled,', 'from the coffee machine & furniture,', 'to the shoes on our feet.']}
-        />
-      </div> */}
-
+      <Section
+        title="Jazz"
+        text="Representing an ensemble of various instruments, each playing their own unique sound and coming together to sing. The people who enter Grandma Jazz, also engage in a space with a variety of people from around our wonderful world. They too, play their own unique sound with this human ensemble. The “Jazz” is the people. We are jazz."
+        image={image3}
+        imageDescription=""
+        name='vibe'
+      />
     </div>
   )
 }

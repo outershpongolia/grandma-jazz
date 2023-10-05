@@ -12,7 +12,7 @@ interface ISectionProps extends PropsWithChildren {
     text: string
     image: StaticImageData
     imageDescription: string
-    name: 'intro' | 'flowers' | 'vibe'
+    name: 'intro' | 'flowers' | 'vibe' | 'vision'
     hasButton?: boolean
     onClick?: () => void
 }
@@ -102,13 +102,13 @@ export const Section: React.FC<ISectionProps> = ({
         >
             <div
                 className={clsx(styles.section__container, {
-                    [styles.section__container_right]: name === 'intro' || name === 'vibe',
+                    [styles.section__container_right]: name === 'intro' || name === 'vibe' || name === 'vision',
                     [styles.section__container_left]: name === 'flowers',
                 })}
             >
                 <div
                     className={clsx(styles.section__text, 'text__subtitle', {
-                        'text_right': name === 'intro' || name === 'vibe'
+                        'text_right': name === 'intro' || name === 'vibe' || name === 'vision'
                     })}
                     ref={titleRef}
                 >
@@ -117,7 +117,7 @@ export const Section: React.FC<ISectionProps> = ({
 
                 <div
                     className={clsx(styles.section__text, 'text__normal', {
-                        'text_right': name === 'intro' || name === 'vibe'
+                        'text_right': name === 'intro' || name === 'vibe' || name === 'vision'
                     })}
                     ref={textRef}
                 >
@@ -137,7 +137,7 @@ export const Section: React.FC<ISectionProps> = ({
 
             <div
                 className={clsx(styles.section__wrapper, {
-                    [styles.section__wrapper_right]: name === 'intro' || name === 'vibe',
+                    [styles.section__wrapper_right]: name === 'intro' || name === 'vibe' || name === 'vision',
                     [styles.section__wrapper_left]: name === 'flowers'
                 })}
                 ref={imageRef}
