@@ -33,7 +33,7 @@ export const Section: React.FC<ISectionProps> = ({
     const buttonRef = useRef<HTMLDivElement>(null)
     const shadowRef = useRef<HTMLDivElement>(null)
 
-    const handleSlideAnimation = useCallback(() => {
+    const handleSlideUpAnimation = useCallback(() => {
         if (!window) return
 
         const sectionElement = sectionRef.current
@@ -83,9 +83,9 @@ export const Section: React.FC<ISectionProps> = ({
 
     useEffect(() => {
         if (sectionRef.current) {
-            slideUpAnimation(sectionRef.current, handleSlideAnimation)
+            slideUpAnimation(sectionRef.current, handleSlideUpAnimation)
         }
-    }, [])
+    }, [handleSlideUpAnimation])
 
     const handleOnClick = useCallback(() => {
         if (!onClick) return null

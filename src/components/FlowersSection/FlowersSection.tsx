@@ -80,7 +80,7 @@ export const FlowersSection: React.FC<IFlowersSectionProps> = () => {
     if (sectionRef.current) {
       slideUpAnimation(sectionRef.current, handleSlideAnimation)
     }
-  }, [])
+  }, [handleSlideAnimation])
 
   return (
     <div className={styles.flowersSection} ref={sectionRef}>
