@@ -12,7 +12,7 @@ export const GoogleMapSection: React.FC<IGoogleMapSectionProps> = ({ latitude, l
 
     return (
         <div className={styles.googleMapSection}>
-            <LoadScript googleMapsApiKey='AIzaSyC9WcoAurg3gdgvlnPlAD3ci9VfBdWg3vM'>
+            <LoadScript googleMapsApiKey=''>
                 <GoogleMap
                     mapContainerClassName={styles.googleMapSection__map}
                     center={{ lat: latitude, lng: longitude }}
