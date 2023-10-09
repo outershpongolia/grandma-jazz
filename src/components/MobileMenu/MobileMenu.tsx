@@ -1,14 +1,13 @@
 'use client'
 import React from "react"
 import styles from './MobileMenu.module.scss'
-import clsx from "clsx"
 import { ERoute } from "@/constants"
 import { LinkItem } from "../LinkItem/LinkItem"
 import { usePathname } from "next/navigation"
-
 import { PiFlowerLotus, PiCoffee, PiMusicNotes } from 'react-icons/pi'
 import { GiVillage } from 'react-icons/gi'
 import { RxHome } from 'react-icons/rx'
+import clsx from "clsx"
 
 interface IMobileMenuProps {
     open: boolean

@@ -1,15 +1,16 @@
 import React, { useCallback, useEffect, useRef } from 'react'
 import styles from './FlowersSection.module.scss'
 import { slideUpAnimation } from '@/utils'
+import { defaultSlideUpAnimation } from '@/constants'
 import anime from 'animejs'
 import clsx from 'clsx'
 import Image from 'next/image'
 
+// Images
 import grandmaImage from '../../../public/images/grandma1.jpeg'
 import grandmaImage2 from '../../../public/images/grandma2.jpeg'
 import grandmaImage3 from '../../../public/images/jump.jpeg'
 import grandmaImage4 from '../../../public/images/grandma3.png'
-import { defaultSlideUpAnimation } from '@/constants'
 
 interface IFlowersSectionProps {}
 

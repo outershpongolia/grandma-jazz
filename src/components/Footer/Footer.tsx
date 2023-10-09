@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Footer.module.scss'
-import { BsTwitter, BsFacebook, BsInstagram } from 'react-icons/bs'
+import { BsFacebook, BsInstagram } from 'react-icons/bs'
 import { BiLogoTelegram, BiLogoTiktok } from 'react-icons/bi'
 
 import { FooterIcon } from '../FooterIcon/FooterIcon'

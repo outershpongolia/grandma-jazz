@@ -3,6 +3,7 @@ import styles from './refreshments.module.scss'
 import clsx from "clsx"
 import Image from "next/image"
 
+// Images
 import coffeeImage from '../../../public/images/coffee.jpg'
 import teaImage from '../../../public/images/tea.jpg'
 import cakeImage from '../../../public/images/cake.jpg'
@@ -16,11 +17,11 @@ const Refreshments: React.FC<IRefreshmentsProps> = () => {
       {/* Header */}
       <div className={styles.refreshments__header}>
         <div className={clsx(styles.refreshments__title, "text__title")}>
-          Our local refreshments.
+          our local refreshments
         </div>
 
         <div className={clsx(styles.refreshments__headerText, "text__normal")}>
-          Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries.
+          Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries
         </div>
       </div>
 
@@ -31,7 +32,7 @@ const Refreshments: React.FC<IRefreshmentsProps> = () => {
           {/* Coffee */}
           <div className={styles.refreshments__item}>
             <div className={styles.refreshments__textWrapper}>
-              <div className={clsx(styles.refreshments__subtitle, "text__subtitle")}>Coffee</div>
+              <div className={clsx(styles.refreshments__subtitle, "text__subtitle")}>coffee</div>
 
               <div className="text__normal">
                 Imagine the sound of a ball of ice, splitting as locally sourced coffee is poured into a whiskey glass.
@@ -50,7 +51,7 @@ const Refreshments: React.FC<IRefreshmentsProps> = () => {
           {/* Tea */}
           <div className={clsx(styles.refreshments__item, styles.refreshments__item_tea)}>
             <div className={styles.refreshments__textWrapper}>
-              <div className={clsx(styles.refreshments__subtitle, "text__subtitle")}>Tea</div>
+              <div className={clsx(styles.refreshments__subtitle, "text__subtitle")}>tea</div>
 
               <div className="text__normal">
                 Grandma celebrates tea with character, each packing colour & a wealth of health benefits. We select fresh ingredients for a refreshing infusion, served over ice or hot.
@@ -69,7 +70,7 @@ const Refreshments: React.FC<IRefreshmentsProps> = () => {
           {/* Cake */}
           <div className={styles.refreshments__item}>
             <div className={styles.refreshments__textWrapper}>
-              <div className={clsx(styles.refreshments__subtitle, "text__subtitle")}>Bakery</div>
+              <div className={clsx(styles.refreshments__subtitle, "text__subtitle")}>bakery</div>
 
               <div className="text__normal">
                 Feeling hungry? With 100% plant based love & care put into our baking…Grandma's homemade brownie will leave you wanting more. Replacing sugar with fresh Thai dates, it delivers on the sweetness.

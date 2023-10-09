@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './Carousel.module.scss'
 import { StaticImageData } from 'next/image'
-import Image from 'next/image'
 import Slider, { Settings } from "react-slick"
+import Image from 'next/image'
 
 interface CarouselProps {
   images: StaticImageData[]

@@ -8,17 +8,16 @@ import { ERoute, defaultSlideUpAnimation } from '@/constants'
 import { GoogleMapSection } from '@/components/GoogleMapSection/GoogleMapSection'
 import { NextPage } from 'next'
 import { PageHeader } from '@/components/PageHeader/PageHeader'
+import { slideUpAnimation } from '@/utils'
+import clsx from 'clsx'
+import anime from 'animejs'
 import Image from 'next/image'
 
 // Images
-import headerImage from '../../public/images/main2.jpg'
 import introImage from '../../public/images/norm.jpeg'
 import flowersImage from '../../public/images/buds.jpg'
 import vibeImage from '../../public/images/vibe.jpeg'
 import refreshmentsLogo from '../../public/images/logo-1.jpeg'
-import clsx from 'clsx'
-import { slideUpAnimation } from '@/utils'
-import anime from 'animejs'
 
 interface IHomeProps {}
 

@@ -1,5 +1,4 @@
 import React from "react"
-
 import styles from './VibeSection.module.scss'
 import { Video } from "../Video/Video"
 import { uniqueId } from "lodash"

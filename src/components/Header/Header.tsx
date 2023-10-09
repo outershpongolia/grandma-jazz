@@ -6,10 +6,8 @@ import logo from '../../../public/images/logo-2.jpeg'
 import { LinkItem } from "../LinkItem/LinkItem"
 import { ERoute } from "@/constants"
 import { usePathname } from "next/navigation"
-import { FiMenu } from 'react-icons/fi'
 import { MobileMenu } from "../MobileMenu/MobileMenu"
 import { FaBars, FaTimes } from 'react-icons/fa'
-import clsx from "clsx"
 
 interface IHeaderProps {}
 

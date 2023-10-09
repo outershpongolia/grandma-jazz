@@ -5,10 +5,10 @@ import { VibeSection } from '@/components/VibeSection/VibeSection'
 import { PointerSvg } from '../../../public/svgs/PointerSvg'
 import { PageHeader } from '@/components/PageHeader/PageHeader'
 import { Review } from '@/components/Review/Review'
-
-import quotes from '../../../quotes.json'
 import { uniqueId } from 'lodash'
+import quotes from '../../../quotes.json'
 import clsx from 'clsx'
+
 
 interface IVibeProps {}
 

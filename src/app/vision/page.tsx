@@ -1,19 +1,15 @@
 "use client"
 import React from "react"
 import styles from './vision.module.scss'
-import Image from "next/image"
-import clsx from "clsx"
-import { VisionSection } from "@/components/VisionSection/VisionSection"
-import { uniqueId } from "lodash"
 import { PageHeader } from "@/components/PageHeader/PageHeader"
 import { Section } from "@/components/Section/Section"
+
+// Images
 import image1 from '../../../public/images/vision1.jpg'
 import image2 from '../../../public/images/vision2.jpg'
 import image3 from '../../../public/images/vision3.jpg'
 
 interface IVisionProps {}
-
-const texts = ["Grandma Jazz is passionately dedicated to creating an authentic, local experience in Phuket by fostering a vibrant community built on sustainable practices.", "We aim to be more than just a cafe - we're a place where old traditions meet new insights, where quality is our promise and where everyone is part of the Grandma Jazz family."]
 
 const Vision: React.FC<IVisionProps> = () => {
   return (

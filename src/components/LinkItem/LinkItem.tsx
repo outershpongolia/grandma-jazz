@@ -1,7 +1,7 @@
 import React from "react"
 import styles from './LinkItem.module.scss'
-import Link from "next/link"
 import { ERoute } from "@/constants"
+import Link from "next/link"
 import clsx from "clsx"
 
 interface ILinkItemProps {

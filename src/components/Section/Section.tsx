@@ -1,11 +1,11 @@
 import React, { PropsWithChildren, useCallback, useEffect, useRef } from "react"
 import styles from './Section.module.scss'
-import clsx from "clsx"
-import Image, { StaticImageData } from 'next/image'
 import { Button } from "../Button/Button"
-import anime from "animejs"
 import { slideUpAnimation } from "@/utils"
 import { defaultSlideUpAnimation } from "@/constants"
+import Image, { StaticImageData } from 'next/image'
+import clsx from "clsx"
+import anime from "animejs"
 
 interface ISectionProps extends PropsWithChildren {
     title: string

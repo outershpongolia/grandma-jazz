@@ -2,14 +2,13 @@
 import React, { useCallback, useEffect, useRef, useState } from "react"
 import styles from './flowers.module.scss'
 import { PageHeader } from "@/components/PageHeader/PageHeader"
-import pageHeaderImage from '../../../public/images/flower.jpg'
 import { FlowersSection } from "@/components/FlowersSection/FlowersSection"
 import { MobileFlowersSection } from "@/components/FlowersSection/MobileFlowersSection/MobileFlowersSection"
-import anime from "animejs"
 import { slideUpAnimation } from "@/utils"
-import clsx from "clsx"
 import { defaultSlideUpAnimation } from "@/constants"
 import { QuestionCard } from "@/components/QuestionCard/QuestionCard"
+import anime from "animejs"
+import clsx from "clsx"
 
 interface IFlowersProps {}
 

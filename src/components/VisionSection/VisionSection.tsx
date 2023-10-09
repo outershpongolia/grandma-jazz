@@ -1,7 +1,7 @@
 import React from "react"
 import styles from './VisionSection.module.scss'
-import clsx from "clsx"
 import { uniqueId } from "lodash"
+import clsx from "clsx"
 
 interface IVisionSectionProps {
     title: string

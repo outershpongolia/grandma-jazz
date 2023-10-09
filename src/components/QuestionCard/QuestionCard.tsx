@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useRef } from "react"
 import styles from './QuestionCard.module.scss'
-import clsx from "clsx"
 import { BsCheck } from 'react-icons/bs'
-import anime from "animejs"
 import { fadeInOutAnimation } from "@/utils"
 import { uniqueId } from "lodash"
+import clsx from "clsx"
+import anime from "animejs"
 
 interface IQuestionCardProps {
     question: string

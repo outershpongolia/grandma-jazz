@@ -8,6 +8,10 @@
     background-size: cover;
     background-position: center;
 
+    @media screen and (max-width: 440px) {
+        height: 424px;
+    }
+
     &_home {
         justify-content: flex-end;
         background-image: url('../../../public/images/main2.jpg');
@@ -49,10 +53,6 @@
         }
     }
 
-    @media screen and (max-width: 440px) {
-        height: 424px;
-    }
-
     &__shadow {
         position: absolute;
         width: 100%;
@@ -68,10 +68,14 @@
         max-width: 30%;
         margin-left: 16%;
 
-        &_home {
+        &_home,
+        &_vision {
             text-align: right;
-            margin-right: 16%;
             margin-left: 0;
+        }
+
+        &_home {
+            margin-right: 16%;
         }
 
         @media screen and (max-width: 1008px) {

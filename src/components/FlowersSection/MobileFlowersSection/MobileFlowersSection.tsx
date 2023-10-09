@@ -4,6 +4,8 @@ import sectionStyles from '../FlowersSection.module.scss'
 import clsx from 'clsx'
 import { Carousel } from '@/components/Carousel/Carousel'
 import { Settings } from 'react-slick'
+
+// Images
 import grandmaImage from '../../../../public/images/grandma1.jpeg'
 import grandmaImage2 from '../../../../public/images/grandma2.jpeg'
 import grandmaImage3 from '../../../../public/images/jump.jpeg'

@@ -1,11 +1,10 @@
 "use client"
 import React, { useCallback, useEffect, useRef } from "react"
 import styles from "./PageHeader.module.scss"
-import Image, { StaticImageData } from "next/image"
-import clsx from "clsx"
-import anime from "animejs"
 import { slideUpAnimation } from "@/utils"
 import { defaultSlideUpAnimation } from "@/constants"
+import clsx from "clsx"
+import anime from "animejs"
 
 interface IPageHeaderProps {
     title: string
