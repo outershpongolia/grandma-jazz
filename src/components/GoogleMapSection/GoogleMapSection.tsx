@@ -12,8 +12,8 @@ export const GoogleMapSection: React.FC<IGoogleMapSectionProps> = ({ latitude, l
 
     return (
         <div className={styles.googleMapSection}>
-            {/* <LoadScript
-                googleMapsApiKey
+            <LoadScript
+                googleMapsApiKey=''
             >
                 <GoogleMap
                     mapContainerClassName={styles.googleMapSection__map}
@@ -23,7 +23,7 @@ export const GoogleMapSection: React.FC<IGoogleMapSectionProps> = ({ latitude, l
                 >
                     <Marker position={{ lat: latitude, lng: longitude }} />
                 </GoogleMap>
-            </LoadScript> */}
+            </LoadScript>
         </div>
     )
 }
