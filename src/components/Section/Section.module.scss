@@ -27,6 +27,8 @@
         flex-direction: column;
         justify-content: center;
         gap: 16px;
+        padding-right: 24px;
+        align-items: flex-end;
 
         @media screen and (max-width: 1008px) {
             align-items: center !important;
@@ -38,13 +40,10 @@
             width: 100%;
         }
 
-        &_right {
-            align-items: end;
-            padding-right: 24px;
-        }
-
-        &_left {
+        &_reversed {
+            align-items: flex-start;
             padding-left: 24px;
+            padding-right: 0px;
         }
     }
 
@@ -54,6 +53,11 @@
     
     &__text {
         opacity: 0;
+        text-align: end;
+
+        &_reversed {
+            text-align: start;
+        }
     }
 
     &__button {
@@ -64,17 +68,15 @@
         width: fit-content;
         position: relative;
         opacity: 0;
+        padding-left: 24px;
 
         @media screen and (max-width: 1008px) {
             padding: 0 !important;
         }
 
-        &_right {
-            padding-left: 24px;
-        }
-
-        &_left {
+        &_reversed {
             padding-right: 24px;
+            padding-left: 0px;
         }
     }
     
@@ -86,7 +88,7 @@
             width: 100% !important;
         }
 
-        &_intro {
+        &_vertical {
             width: 368px;
         }
     }
@@ -104,7 +106,7 @@
             display: none;
         }
 
-        &_right {
+        &_reversed {
             right: 48px;
         }
     }

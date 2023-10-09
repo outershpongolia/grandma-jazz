@@ -49,7 +49,7 @@ const Flowers: React.FC<IFlowersProps> = () => {
     if (descriptionRef.current) {
       slideUpAnimation(descriptionRef.current, handleSlideUpAnimation)
     }
-  }, [])
+  }, [handleSlideUpAnimation])
 
   return (
     <div className={styles.flowers}>

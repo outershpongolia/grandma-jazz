@@ -12,7 +12,8 @@ interface ISectionProps extends PropsWithChildren {
     text: string
     image: StaticImageData
     imageDescription: string
-    name: 'intro' | 'flowers' | 'vibe' | 'vision'
+    reversed?: boolean
+    vertical?: boolean
     hasButton?: boolean
     onClick?: () => void
 }
@@ -22,7 +23,8 @@ export const Section: React.FC<ISectionProps> = ({
     text,
     image,
     imageDescription,
-    name,
+    reversed,
+    vertical,
     hasButton,
     onClick
 }) => {
@@ -96,19 +98,18 @@ export const Section: React.FC<ISectionProps> = ({
     return (
         <div
             className={clsx(styles.section, {
-                [styles.section_reversed]: name === 'flowers',
+                [styles.section_reversed]: reversed,
             })}
             ref={sectionRef}
         >
             <div
                 className={clsx(styles.section__container, {
-                    [styles.section__container_right]: name === 'intro' || name === 'vibe' || name === 'vision',
-                    [styles.section__container_left]: name === 'flowers',
+                    [styles.section__container_reversed]: reversed
                 })}
             >
                 <div
                     className={clsx(styles.section__text, 'text__subtitle', {
-                        'text_right': name === 'intro' || name === 'vibe' || name === 'vision'
+                        [styles.section__text_reversed]: !reversed
                     })}
                     ref={titleRef}
                 >
@@ -117,7 +118,7 @@ export const Section: React.FC<ISectionProps> = ({
 
                 <div
                     className={clsx(styles.section__text, 'text__normal', {
-                        'text_right': name === 'intro' || name === 'vibe' || name === 'vision'
+                        [styles.section__text_reversed]: reversed
                     })}
                     ref={textRef}
                 >
@@ -137,13 +138,14 @@ export const Section: React.FC<ISectionProps> = ({
 
             <div
                 className={clsx(styles.section__wrapper, {
-                    [styles.section__wrapper_right]: name === 'intro' || name === 'vibe' || name === 'vision',
-                    [styles.section__wrapper_left]: name === 'flowers'
+                    [styles.section__wrapper_reversed]: reversed
                 })}
                 ref={imageRef}
             >
                 <Image
-                    className={clsx(styles.section__image, styles[`section__image_${name}`])}
+                    className={clsx(styles.section__image, {
+                        [styles.section__image_vertical]: vertical
+                    })}
                     src={image}
                     alt={imageDescription}
                 />
@@ -151,7 +153,7 @@ export const Section: React.FC<ISectionProps> = ({
                 <div
                     ref={shadowRef}
                     className={clsx(styles.section__imageShadow, {
-                        [styles.section__imageShadow_right]: name === 'flowers'
+                        [styles.section__imageShadow_reversed]: reversed
                     })}
                 />
             </div>

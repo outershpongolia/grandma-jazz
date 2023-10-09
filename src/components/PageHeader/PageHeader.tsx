@@ -17,7 +17,7 @@ export const PageHeader: React.FC<IPageHeaderProps> = ({ title, page, className 
     const titleRef = useRef<HTMLDivElement>(null)
     const headerRef = useRef<HTMLDivElement>(null)
 
-    const handleAnimation = useCallback(() => {
+    const handleSlideUpAnimation = useCallback(() => {
         if (!window) return
 
         const headerElement = headerRef.current
@@ -36,9 +36,9 @@ export const PageHeader: React.FC<IPageHeaderProps> = ({ title, page, className 
 
     useEffect(() => {
         if (headerRef.current) {
-            slideUpAnimation(headerRef.current, handleAnimation)
+            slideUpAnimation(headerRef.current, handleSlideUpAnimation)
         }
-    }, [])
+    }, [handleSlideUpAnimation])
     
     return (
         <div

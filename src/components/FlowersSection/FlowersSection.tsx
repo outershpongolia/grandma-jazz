@@ -23,7 +23,7 @@ export const FlowersSection: React.FC<IFlowersSectionProps> = () => {
   const image3Ref = useRef<HTMLDivElement>(null)
   const image4Ref = useRef<HTMLDivElement>(null)
 
-  const handleSlideAnimation = useCallback(() => {
+  const handleSlideUpAnimation = useCallback(() => {
     if (!window) return
 
     const sectionElement = sectionRef.current
@@ -78,9 +78,9 @@ export const FlowersSection: React.FC<IFlowersSectionProps> = () => {
 
   useEffect(() => {
     if (sectionRef.current) {
-      slideUpAnimation(sectionRef.current, handleSlideAnimation)
+      slideUpAnimation(sectionRef.current, handleSlideUpAnimation)
     }
-  }, [handleSlideAnimation])
+  }, [handleSlideUpAnimation])
 
   return (
     <div className={styles.flowersSection} ref={sectionRef}>

@@ -39,7 +39,7 @@ export const PointerSvg: React.FC<IPointerSvgProps> = ({ className }) => {
     if (svgRef.current) {
       slideUpAnimation(svgRef.current, handleAnimateSvg)
     }
-  }, [])
+  }, [handleAnimateSvg])
   
   return (
     <svg

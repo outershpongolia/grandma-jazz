@@ -31,7 +31,7 @@ const Home: NextPage<IHomeProps> = () => {
 
   const router = useRouter()
 
-  const handleFadeInAnimation = useCallback(() => {
+  const handleSlideUpAnimation = useCallback(() => {
     if (!window) return
 
     const sectionElement = sectionRef.current
@@ -68,9 +68,9 @@ const Home: NextPage<IHomeProps> = () => {
 
   useEffect(() => {
     if (sectionRef.current) {
-      slideUpAnimation(sectionRef.current, handleFadeInAnimation)
+      slideUpAnimation(sectionRef.current, handleSlideUpAnimation)
     }
-  }, [])
+  }, [handleSlideUpAnimation])
 
   const handleNavigateToPage = useCallback((route: ERoute) => {
     return () => router.push(route)
@@ -89,7 +89,7 @@ const Home: NextPage<IHomeProps> = () => {
           text="As you enter the doors of Grandma Jazz, you are instantly kissed with jazz music, Havana hats and a respect for the easy vibes. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           image={introImage}
           imageDescription="Man with a hat"
-          name="intro"
+          vertical
         />
 
         <div className={styles.horizontalLine} />
@@ -99,7 +99,7 @@ const Home: NextPage<IHomeProps> = () => {
           text="Come and experience the finest quality organic cannabis on the island, always sourced from local farmers in Thailand."
           image={flowersImage}
           imageDescription="Marijuana buds in a gift box"
-          name="flowers"
+          reversed
           hasButton
           onClick={handleNavigateToPage(ERoute.FLOWERS)}
         />
@@ -111,7 +111,6 @@ const Home: NextPage<IHomeProps> = () => {
           text="Wide, open mountains surround the cafe, bringing calm & ease for good conversation. Rest, with friends or working from a laptop, we've considered your privacy, while you enjoy the little things."
           image={vibeImage}
           imageDescription="Girl is sitting on the balcony, smoking cigarrete and enjoying the view of the jungle"
-          name="vibe"
           hasButton
           onClick={handleNavigateToPage(ERoute.VIBE)}
         />
@@ -141,7 +140,7 @@ const Home: NextPage<IHomeProps> = () => {
             className={styles.home__button}
             label='See our menu here'
             onClick={handleNavigateToPage(ERoute.REFRESHMENTS)}
-            version='white'
+            reversedColors
           />
         </div>
       </div>

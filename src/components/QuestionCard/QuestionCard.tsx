@@ -43,7 +43,7 @@ export const QuestionCard: React.FC<IQuestionCardProps> = ({ question, answers }
         if (cardRef.current) {
             fadeInOutAnimation(cardRef.current, handleFadeInAnimation, handleFadeOutAnimation)
         }
-    }, [])
+    }, [handleFadeInAnimation, handleFadeOutAnimation])
     
     return (
         <div className={styles.questionCard} ref={cardRef}>

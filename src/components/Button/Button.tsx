@@ -7,14 +7,16 @@ interface IButtonProps {
     label: string | React.ReactNode
     onClick: () => void
     isDisabled?: boolean
-    version?: "white" | "icon"
+    reversedColors?: boolean
     className?: string
 }
 
-export const Button: React.FC<IButtonProps> = ({ label, onClick, isDisabled, version, className}) => {
+export const Button: React.FC<IButtonProps> = ({ label, onClick, isDisabled, reversedColors, className}) => {
     return (
         <button
-            className={clsx(styles.button, styles[`button_${version}`], className)}
+            className={clsx(styles.button, className, {
+                [styles.button_white]: reversedColors
+            })}
             type="button"
             onClick={onClick}
             disabled={isDisabled}

@@ -25,7 +25,6 @@ const Vision: React.FC<IVisionProps> = () => {
         text="Grandma Jazz is passionately dedicated to creating an authentic, local experience in Phuket by fostering a vibrant community built on sustainable practices. We aim to be more than just a cafe - we're a place where old traditions meet new insights, where quality is our promise and where everyone is part of the Grandma Jazz family."
         image={image1}
         imageDescription=""
-        name='vision'
       />
 
       <Section
@@ -33,7 +32,7 @@ const Vision: React.FC<IVisionProps> = () => {
         text="In recognition of every Grandma out there and beyond, who without having done her own thing in life, would not have given us the life we have today. If you think about it, without “Grandma”, none of this is possible."
         image={image2}
         imageDescription=""
-        name='flowers'
+        reversed
       />
 
       <Section
@@ -41,7 +40,6 @@ const Vision: React.FC<IVisionProps> = () => {
         text="Representing an ensemble of various instruments, each playing their own unique sound and coming together to sing. The people who enter Grandma Jazz, also engage in a space with a variety of people from around our wonderful world. They too, play their own unique sound with this human ensemble. The “Jazz” is the people. We are jazz."
         image={image3}
         imageDescription=""
-        name='vibe'
       />
     </div>
   )
