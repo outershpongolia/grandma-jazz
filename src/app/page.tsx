@@ -74,7 +74,7 @@ const Home: NextPage<IHomeProps> = () => {
 
   const handleNavigateToPage = useCallback((route: ERoute) => {
     return () => router.push(route)
-  }, [])
+  }, [router])
 
   return (
     <div className={styles.home}>
