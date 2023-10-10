@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     publicRuntimeConfig: {
-        googleMapsApiKey: 'AIzaSyC9WcoAurg3gdgvlnPlAD3ci9VfBdWg3vM',
+        googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
     }
 }
 
