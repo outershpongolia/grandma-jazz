@@ -10,6 +10,7 @@ import { QuestionCard } from "@/components/QuestionCard/QuestionCard"
 import anime from "animejs"
 import clsx from "clsx"
 import content from "../../../questions.json"
+import { uniqueId } from "lodash"
 
 interface IFlowersProps {}
 
@@ -77,6 +78,7 @@ const Flowers: React.FC<IFlowersProps> = () => {
         {content.map(section => {
           return (
             <QuestionCard
+              key={uniqueId()}
               content={section}
             />
           )
