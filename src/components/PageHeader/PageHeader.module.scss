@@ -29,6 +29,8 @@
         background-image: url('../../../public/images/vision-grandma.png');
         max-width: 900px;
         margin: 0 auto;
+        justify-content: flex-end;
+        align-items: flex-end;
 
         &::before {
             content: '';
@@ -67,6 +69,7 @@
         opacity: 0;
         max-width: 30%;
         margin-left: 16%;
+        padding-bottom: 32px;
 
         &_home,
         &_vision {

@@ -14,7 +14,7 @@ interface IVisionProps {}
 const Vision: React.FC<IVisionProps> = () => {
   return (
     <div className={styles.vision}>
-      <PageHeader title="" page="vision"  />
+      <PageHeader title="how we feel" page="vision"  />
 
       <Section
         title=""
@@ -24,7 +24,7 @@ const Vision: React.FC<IVisionProps> = () => {
       />
 
       <Section
-        title="Grandma"
+        title="grandma"
         text="In recognition of every Grandma out there and beyond, who without having done her own thing in life, would not have given us the life we have today. If you think about it, without “Grandma”, none of this is possible."
         image={image2}
         imageDescription=""
@@ -32,7 +32,7 @@ const Vision: React.FC<IVisionProps> = () => {
       />
 
       <Section
-        title="Jazz"
+        title="jazz"
         text="Representing an ensemble of various instruments, each playing their own unique sound and coming together to sing. The people who enter Grandma Jazz, also engage in a space with a variety of people from around our wonderful world. They too, play their own unique sound with this human ensemble. The “Jazz” is the people. We are jazz."
         image={image3}
         imageDescription=""

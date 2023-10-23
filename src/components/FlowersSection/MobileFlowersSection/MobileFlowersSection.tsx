@@ -21,46 +21,46 @@ const images = [
 ]
 
 const carouselSettings: Settings = {
-    slidesToShow: 3.2,
-    responsive: [
-      {
-        breakpoint: 856,
-        settings: {
-          slidesToShow: 2.8
-        }
-      },
-      {
-        breakpoint: 710,
-        settings: {
-          slidesToShow: 2.2
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1.8
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1.5
-        }
-      },
-      {
-        breakpoint: 400,
-        settings: {
-          slidesToShow: 1.2
-        }
+  slidesToShow: 3.2,
+  responsive: [
+    {
+      breakpoint: 856,
+      settings: {
+        slidesToShow: 2.8
       }
-    ]
-  }
+    },
+    {
+      breakpoint: 710,
+      settings: {
+        slidesToShow: 2.2
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1.8
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1.5
+      }
+    },
+    {
+      breakpoint: 400,
+      settings: {
+        slidesToShow: 1.2
+      }
+    }
+  ]
+}
 
 export const MobileFlowersSection: React.FC<IMobileFlowersSectionProps> = () => {
     return (
         <div className={styles.mobileFlowersSection}>
             <div className={clsx(styles.mobileFlowersSection__textWrapper, sectionStyles.flowersSection__textWrapper)}>
-                <div className='text__subtitle'>Premium quality flowers.</div>
+                <div className='text__subtitle'>premium quality flowers.</div>
 
                 <div className={clsx(styles.mobileFlowersSection__text, 'text__normal')}>
                     Come and experience the finest quality organic cannabis on the island, always sourced from local farmers in Thailand.

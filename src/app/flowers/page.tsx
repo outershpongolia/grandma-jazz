@@ -9,6 +9,7 @@ import { defaultSlideUpAnimation } from "@/constants"
 import { QuestionCard } from "@/components/QuestionCard/QuestionCard"
 import anime from "animejs"
 import clsx from "clsx"
+import content from "../../../questions.json"
 
 interface IFlowersProps {}
 
@@ -73,20 +74,13 @@ const Flowers: React.FC<IFlowersProps> = () => {
       </div>
 
       <div className={styles.flowers__questions}>
-        <QuestionCard
-          question="What's the difference?"
-          answers={['used for several medicinal and recreational purposes', 'sativa has primarily an energizing effect', 'indica has a relaxing effect and can help you sleep']}
-        />
-
-        <QuestionCard
-          question='Why local?'
-          answers={['fresher', 'greater variety', 'reduced environmental impact', 'support local economies', 'access to information']}
-        />
-
-        <QuestionCard
-          question='Why Organic?'
-          answers={['healthier for consumer', 'no pesticides or heavy metals', 'better for environment', 'higher quality', 'more natural terpenes']}
-        />
+        {content.map(section => {
+          return (
+            <QuestionCard
+              content={section}
+            />
+          )
+        })}
       </div>
 
       <div className={styles.flowers__whiteSection}>

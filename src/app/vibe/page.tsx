@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import styles from './vibe.module.scss'
 import { VibeSection } from '@/components/VibeSection/VibeSection'
 import { PointerSvg } from '../../../public/svgs/PointerSvg'
@@ -25,6 +25,18 @@ const Vibe: React.FC<IVibeProps> = () => {
       setIsMediumScreen(mediumScreen.matches && !smallScreen.matches)
     }
   }, [setIsMediumScreen])
+
+  const bigScreenTiles = useCallback((index: number) => {
+    if (index < 4 || index > 7) {
+      return index % 2 === 0 ? 'white' : 'black'
+    }
+
+    else if (index > 3 && index < 8) {
+      return index % 2 === 0 ? 'black' : 'white'
+    }
+
+    return 'black'
+  }, [])
 
   return (
     <div className={styles.vibe}>
@@ -57,7 +69,7 @@ const Vibe: React.FC<IVibeProps> = () => {
       </div>
 
       <div className={clsx(styles.vibe__text, 'text__subtitle')}>
-        see what our customers have to say
+        on the grapevine
       </div>
 
       <div className={styles.vibe__reviews}>
@@ -69,8 +81,8 @@ const Vibe: React.FC<IVibeProps> = () => {
               username={quote.username}
               color={
                 isMediumScreen
-                ? index % 3 === 0 ? 'white' : 'black'
-                : index % 2 === 0 ? 'white' : 'black'
+                ? index % 2 === 0 ? 'white' : 'black'
+                : bigScreenTiles(index)
               }
             />
           )

@@ -1,0 +1,22 @@
+[
+    [
+        {
+            "question": "what is sativa?",
+            "answers": ["used for several medicinal and recreational purposes", "sativa has primarily an energizing effect"]
+        },
+        {
+            "question": "what is indica?",
+            "answers": ["indica has a relaxing effect and can help you sleep"]
+        }
+    ],
+    [
+        {
+            "question": "Why local?",
+            "answers": ["fresher", "greater variety", "reduced environmental impact", "support local economies", "access to information"]
+        },
+        {
+            "question": "Why Organic?",
+            "answers": ["healthier for consumer", "no pesticides or heavy metals", "better for environment", "higher quality", "more natural terpenes"]
+        }
+    ]
+]

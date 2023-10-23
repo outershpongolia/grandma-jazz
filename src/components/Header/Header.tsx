@@ -5,10 +5,9 @@ import Image from "next/image"
 import logo from '../../../public/images/logo-2.jpeg'
 import { LinkItem } from "../LinkItem/LinkItem"
 import { ERoute } from "@/constants"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { MobileMenu } from "../MobileMenu/MobileMenu"
 import { FaBars, FaTimes } from 'react-icons/fa'
-
 interface IHeaderProps {}
 
 export const Header: React.FC<IHeaderProps> = () => {
@@ -16,6 +15,7 @@ export const Header: React.FC<IHeaderProps> = () => {
   const [ isScreenSmall, setIsScreenSmall ] = useState(false)
 
   const pathname = usePathname()
+  const { push } = useRouter()
 
   useEffect(() => {
     if (pathname) {
@@ -35,9 +35,13 @@ export const Header: React.FC<IHeaderProps> = () => {
     setIsMobileMenuOpen(isMobileMenuOpen => !isMobileMenuOpen)
   }, [setIsMobileMenuOpen])
 
+  const handleReturnToHome = useCallback(() => {
+    push(ERoute.HOME)
+  }, [push])
+
   return (
     <div className={styles.header}>
-      <div className={styles.header__logo}>
+      <div className={styles.header__logo} onClick={handleReturnToHome}>
         <Image
           src={logo}
           alt="Grandma Jazz logo"

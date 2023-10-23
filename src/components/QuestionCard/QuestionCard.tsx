@@ -6,9 +6,13 @@ import { uniqueId } from "lodash"
 import clsx from "clsx"
 import anime from "animejs"
 
-interface IQuestionCardProps {
-    question: string
+export interface IContent {
+    question: string,
     answers: string[]
+}
+
+interface IQuestionCardProps {
+    content: IContent[]
 }
 
 const defaultAnimation = {
@@ -16,7 +20,7 @@ const defaultAnimation = {
     duration: 800
 }
 
-export const QuestionCard: React.FC<IQuestionCardProps> = ({ question, answers }) => {
+export const QuestionCard: React.FC<IQuestionCardProps> = ({ content }) => {
     const cardRef = useRef<HTMLDivElement>(null)
     
     const handleFadeInAnimation = useCallback(() => {
@@ -47,18 +51,29 @@ export const QuestionCard: React.FC<IQuestionCardProps> = ({ question, answers }
     
     return (
         <div className={styles.questionCard} ref={cardRef}>
-            <div className={clsx(styles.questionCard__question, 'text__subtitle')}>{question}</div>
-
-            <div className={styles.questionCard__answers}>
-                {answers.map(answer => {
-                    return (
-                        <div key={uniqueId(answer)} className={styles.questionCard__answer}>
-                            <BsCheck className={styles.questionCard__icon} />
-                            {answer}
+            {content.map((cont, index) => {
+                return (
+                    <div className={clsx(styles.questionCard__section, {
+                        [styles.questionCard__section_right]: index === 1,
+                        [styles.questionCard__section_left]: index === 0
+                    })}>
+                        <div className={clsx(styles.questionCard__question, 'text__subtitle')}>
+                            {cont.question}
                         </div>
-                    )
-                })}
-            </div>
+
+                        <div className={styles.questionCard__answers}>
+                            {cont.answers.map(answer => {
+                                return (
+                                    <div key={uniqueId(answer)} className={styles.questionCard__answer}>
+                                        <BsCheck className={styles.questionCard__icon} />
+                                        {answer}
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </div>
+                )
+            })}
         </div>
     )
 }

@@ -51,17 +51,21 @@
     &__reviews {
         width: 100%;
         margin: 0 auto;
-        max-width: 1000px;
+        max-width: 1300px;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
         gap: 0;
-        padding: 56px 0;
+        padding: 0 0 56px 0;
 
         @media screen and (max-width: 1008px) {
+            grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+        }
+
+        @media screen and (max-width: 680px) {
             grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
         }
 
-        @media screen and (max-width: 640px) {
+        @media screen and (max-width: 480px) {
             grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
         }
     }

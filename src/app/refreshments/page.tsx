@@ -21,7 +21,7 @@ const Refreshments: React.FC<IRefreshmentsProps> = () => {
         </div>
 
         <div className={clsx(styles.refreshments__headerText, "text__normal")}>
-          Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries
+          Keeping you hydrated just the way the Grandma suggested.
         </div>
       </div>
 
