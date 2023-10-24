@@ -34,7 +34,7 @@ const Refreshments: React.FC<IRefreshmentsProps> = () => {
             <div className={styles.refreshments__textWrapper}>
               <div className={clsx(styles.refreshments__subtitle, "text__subtitle")}>coffee</div>
 
-              <div className="text__normal">
+              <div className={clsx(styles.refreshments__text, "text__normal")}>
                 Imagine the sound of a ball of ice, splitting as locally sourced coffee is poured into a whiskey glass.
               </div>
             </div>
@@ -53,7 +53,7 @@ const Refreshments: React.FC<IRefreshmentsProps> = () => {
             <div className={styles.refreshments__textWrapper}>
               <div className={clsx(styles.refreshments__subtitle, "text__subtitle")}>tea</div>
 
-              <div className="text__normal">
+              <div className={clsx(styles.refreshments__text, "text__normal")}>
                 Grandma celebrates tea with character, each packing colour & a wealth of health benefits. We select fresh ingredients for a refreshing infusion, served over ice or hot.
               </div>
             </div>
@@ -72,7 +72,7 @@ const Refreshments: React.FC<IRefreshmentsProps> = () => {
             <div className={styles.refreshments__textWrapper}>
               <div className={clsx(styles.refreshments__subtitle, "text__subtitle")}>bakery</div>
 
-              <div className="text__normal">
+              <div className={clsx(styles.refreshments__text, "text__normal")}>
                 Feeling hungry? With 100% plant based love & care put into our baking…Grandma's homemade brownie will leave you wanting more. Replacing sugar with fresh Thai dates, it delivers on the sweetness.
               </div>
             </div>

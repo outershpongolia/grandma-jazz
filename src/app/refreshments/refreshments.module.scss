@@ -74,7 +74,7 @@
             justify-content: space-between;
         }
 
-        @media screen and (max-width: 572px) {
+        @media screen and (max-width: 640px) {
             flex-direction: column-reverse !important;
             align-items: center;
             gap: 16px;
@@ -91,7 +91,7 @@
         flex-direction: column;
         justify-content: center;
 
-        @media screen and (max-width: 572px) {
+        @media screen and (max-width: 640px) {
             width: 100%;
             gap: 8px;
         }
@@ -104,6 +104,18 @@
     &__subtitle {
         font-size: 26px;
         font-family: var(--font-montserrat);
+
+        @media screen and (max-width: 640px) {
+            text-align: center !important;
+        }
+    }
+
+    &__text {
+        text-align: start !important;
+
+        @media screen and (max-width: 640px) {
+            text-align: center !important;
+        }
     }
 
     &__image {
