@@ -29,11 +29,13 @@
         gap: 16px;
         padding-right: 24px;
         align-items: flex-end;
+        text-align: end;
 
         @media screen and (max-width: 1008px) {
             align-items: center !important;
             width: 80%;
             padding: 0 !important;
+            text-align: center !important;
         }
 
         @media screen and (max-width: 496px) {
@@ -44,6 +46,7 @@
             align-items: flex-start;
             padding-left: 24px;
             padding-right: 0px;
+            text-align: start;
         }
     }
 
@@ -53,11 +56,6 @@
     
     &__text {
         opacity: 0;
-        text-align: end;
-
-        &_reversed {
-            text-align: start;
-        }
     }
 
     &__button {

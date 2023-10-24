@@ -85,7 +85,7 @@ const Home: NextPage<IHomeProps> = () => {
       <div className={styles.home__gradient}>
         <Section
           title="it's in the details"
-          text="As you enter the doors of Grandma Jazz, you are instantly kissed with jazz music, Havana hats and a respect for the easy vibes. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          text="As you enter the doors of Grandma Jazz, you are instantly kissed with jazz music, Havana hats and a respect for the easy vibes."
           image={introImage}
           imageDescription="Man with a hat"
           vertical

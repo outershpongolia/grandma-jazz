@@ -28,7 +28,7 @@ export const MobileMenu: React.FC<IMobileMenuProps> = ({ open }) => {
                     route={ERoute.HOME}
                     name={
                         <div className={styles.mobileMenu__title}>
-                            <RxHome /> Home
+                            Home <RxHome />
                         </div>
                     }
                     isActive={pathname === ERoute.HOME}
@@ -39,7 +39,7 @@ export const MobileMenu: React.FC<IMobileMenuProps> = ({ open }) => {
                     route={ERoute.FLOWERS}
                     name={
                         <div className={styles.mobileMenu__title}>
-                            <PiFlowerLotus /> Flowers
+                            Flowers <PiFlowerLotus />
                         </div>
                     }
                     isActive={pathname === ERoute.FLOWERS}
@@ -50,7 +50,7 @@ export const MobileMenu: React.FC<IMobileMenuProps> = ({ open }) => {
                     route={ERoute.VIBE}
                     name={
                         <div className={styles.mobileMenu__title}>
-                            <PiMusicNotes /> Vibe
+                            Vibe <PiMusicNotes />
                         </div>
                     }
                     isActive={pathname === ERoute.VIBE}
@@ -61,7 +61,7 @@ export const MobileMenu: React.FC<IMobileMenuProps> = ({ open }) => {
                     route={ERoute.REFRESHMENTS}
                     name={
                         <div className={styles.mobileMenu__title}>
-                            <PiCoffee /> Refreshments
+                            Refreshments <PiCoffee /> 
                         </div>
                     }
                     isActive={pathname === ERoute.REFRESHMENTS}
@@ -72,7 +72,7 @@ export const MobileMenu: React.FC<IMobileMenuProps> = ({ open }) => {
                     route={ERoute.VISION}
                     name={
                         <div className={styles.mobileMenu__title}>
-                            <GiVillage /> Vision
+                            Vision <GiVillage />
                         </div>
                     }
                     isActive={pathname === ERoute.VISION}
