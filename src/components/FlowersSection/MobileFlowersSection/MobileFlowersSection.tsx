@@ -60,7 +60,7 @@ export const MobileFlowersSection: React.FC<IMobileFlowersSectionProps> = () => 
     return (
         <div className={styles.mobileFlowersSection}>
             <div className={clsx(styles.mobileFlowersSection__textWrapper, sectionStyles.flowersSection__textWrapper)}>
-                <div className='text__subtitle'>premium quality flowers.</div>
+                <div className={clsx(styles.mobileFlowersSection__title, 'text__subtitle')}>premium quality flowers.</div>
 
                 <div className={clsx(styles.mobileFlowersSection__text, 'text__normal')}>
                     Come and experience the finest quality organic cannabis on the island, always sourced from local farmers in Thailand.

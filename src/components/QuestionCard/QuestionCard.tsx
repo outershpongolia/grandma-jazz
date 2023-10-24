@@ -53,10 +53,13 @@ export const QuestionCard: React.FC<IQuestionCardProps> = ({ content }) => {
         <div className={styles.questionCard} ref={cardRef}>
             {content.map((cont, index) => {
                 return (
-                    <div key={uniqueId(cont.question)} className={clsx(styles.questionCard__section, {
-                        [styles.questionCard__section_right]: index === 1,
-                        [styles.questionCard__section_left]: index === 0
-                    })}>
+                    <div
+                        key={uniqueId(cont.question)}
+                        className={clsx(styles.questionCard__section, {
+                            [styles.questionCard__section_left]: index === 0,
+                            [styles.questionCard__section_right]: index === 1,
+                        }
+                    )}>
                         <div className={clsx(styles.questionCard__question, 'text__subtitle')}>
                             {cont.question}
                         </div>

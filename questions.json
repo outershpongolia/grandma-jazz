@@ -11,11 +11,11 @@
     ],
     [
         {
-            "question": "Why local?",
+            "question": "why local?",
             "answers": ["fresher", "greater variety", "reduced environmental impact", "support local economies", "access to information"]
         },
         {
-            "question": "Why Organic?",
+            "question": "why organic?",
             "answers": ["healthier for consumer", "no pesticides or heavy metals", "better for environment", "higher quality", "more natural terpenes"]
         }
     ]
