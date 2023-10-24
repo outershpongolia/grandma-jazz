@@ -17,26 +17,33 @@ const Vibe: React.FC<IVibeProps> = () => {
 
   const svgContainerRef = useRef<HTMLDivElement>(null)
 
+  console.log({isMediumScreen})
+
   useEffect(() => {
     if (window) {
       const mediumScreen = matchMedia('(max-width: 1008px)')
-      const smallScreen = matchMedia('(max-width: 640px)')
 
-      setIsMediumScreen(mediumScreen.matches && !smallScreen.matches)
+      setIsMediumScreen(mediumScreen.matches)
     }
   }, [setIsMediumScreen])
 
   const bigScreenTiles = useCallback((index: number) => {
-    if (index < 4 || index > 7) {
+    if (isMediumScreen) {
       return index % 2 === 0 ? 'white' : 'black'
     }
 
-    else if (index > 3 && index < 8) {
-      return index % 2 === 0 ? 'black' : 'white'
+    if (!isMediumScreen) {
+      if (index < 4 || index > 7) {
+        return index % 2 === 0 ? 'white' : 'black'
+      }
+  
+      else if (index > 3 && index < 8) {
+        return index % 2 === 0 ? 'black' : 'white'
+      }
     }
 
     return 'black'
-  }, [])
+  }, [isMediumScreen])
 
   return (
     <div className={styles.vibe}>
@@ -79,11 +86,7 @@ const Vibe: React.FC<IVibeProps> = () => {
               key={uniqueId(quote.quote)}
               quote={quote.quote}
               username={quote.username}
-              color={
-                isMediumScreen
-                ? index % 2 === 0 ? 'white' : 'black'
-                : bigScreenTiles(index)
-              }
+              color={bigScreenTiles(index)}
             />
           )
         })}

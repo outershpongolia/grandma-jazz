@@ -48,14 +48,18 @@
     }
 
     &__text {
-        text-align: end;
+        text-align: end !important;
 
         @media screen and (max-width: 736px) {
             text-align: center !important;
         }
 
         &_reversed {
-            text-align: start;
+            text-align: start !important;
+
+            @media screen and (max-width: 736px) {
+                text-align: center !important;
+            }
         }
     }
 }
